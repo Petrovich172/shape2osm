@@ -73,15 +73,19 @@ func (t1 *Tensor) Print() {
 
 
 // Conv2D - apply convolution to t1 using t2 kernel
-func (t1 *Tensor) Conv2D (t2 Tensor, stride int, padding int) Tensor {
+func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int) Tensor {
 
-outputData := NewTensor((*t1).Size.X, t2.Size.Y)
+outputX := ((*t1).Size.X - t2.Size.X + 2*padding[0])/stride[0] + 1
+outputY := ((*t1).Size.Y - t2.Size.Y + 2*padding[1])/stride[1] + 1
+fmt.Println(outputX, outputY)
+outputData := NewTensor(outputX, outputY)
 // find center position of kernel (half of kernel size)
 kCenterX := t2.Size.X / 2;
 kCenterY := t2.Size.Y / 2;
+fmt.Println(stride[0] + 0)
 
-	for i := 0; i < (*t1).Size.Y; i++ {              // rows
-	    for j := 0; j < (*t1).Size.X; j++ {          // columns
+	for i := 0; i < (*t1).Size.Y; i = (i + stride[0]) {              // rows
+	    for j := 0; j < (*t1).Size.X; j = (j + stride[1]) {          // columns
 	        for m := 0; m < t2.Size.Y; m++ {     // kernel rows
 	            mm := t2.Size.Y - 1 - m;      	// row index of flipped kernel
 
@@ -107,15 +111,16 @@ kCenterY := t2.Size.Y / 2;
 
 
 func main() {
-	inputData := NewTensor(3, 4)
-	inputData.SetData(3, 4, []float64{1, 5, 1, 2, 7, 2, 3, 9, 3, 4, 4, 4})
+	inputData := NewTensor(4, 4)
+	inputData.SetData(4, 4, []float64{1, 5, 1, 4, 4, 4, 2, 7, 2, 3, 9, 3, 4, 4, 4, 9})
 	//fmt.Println(inputData)
 	//inputData.Print()
 
-	kernel := NewTensor(4, 3)
-	kernel.SetData(4, 3, []float64{1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3})
+	kernel := NewTensor(3, 3)
+	kernel.SetData(3, 3, []float64{1, 1, 1, 2, 2, 2, 3, 3, 3})
 	//fmt.Println(kernel)
 	//inputData.Print()
-	inputData.Conv2D(kernel, 1, 0)
-	
+	stride := [2]int{1, 1}
+	padding := [2]int{0, 0}
+	inputData.Conv2D(kernel, stride, padding)
 }
