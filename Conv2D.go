@@ -77,18 +77,26 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int) Tensor {
 
 outputX := ((*t1).Size.X - t2.Size.X + 2*padding[0])/stride[0] + 1
 outputY := ((*t1).Size.Y - t2.Size.Y + 2*padding[1])/stride[1] + 1
-fmt.Println(outputX, outputY)
+// fmt.Println(outputX, outputY)
 outputData := NewTensor(outputX, outputY)
+
 // find center position of kernel (half of kernel size)
 kCenterX := t2.Size.X / 2;
 kCenterY := t2.Size.Y / 2;
-fmt.Println(stride[0] + 0)
 
-	for i := 0; i < (*t1).Size.Y; i = (i + stride[0]) {              // rows
-	    for j := 0; j < (*t1).Size.X; j = (j + stride[1]) {          // columns
+// index to input element into output array
+el := 0
+
+
+	for i := 0; i < outputX; i = (i + stride[0]) {              // rows
+	    for j := 0; j < outputY; j = (j + stride[1]) {          // columns
+	    	if i == 0 && j == 0 {
+	    		el = 0
+	    	} else {
+	    		el += 1
+	    	}
 	        for m := 0; m < t2.Size.Y; m++ {     // kernel rows
 	            mm := t2.Size.Y - 1 - m;      	// row index of flipped kernel
-
 	            for n := 0; n < t2.Size.X; n++ {	// kernel columns
 
 	                nn := t2.Size.X - 1 - n;  // column index of flipped kernel
@@ -99,10 +107,13 @@ fmt.Println(stride[0] + 0)
 
 	                // ignore input samples which are out of bound
 	                if ii >= 0 && ii < (*t1).Size.Y && jj >= 0 && jj < (*t1).Size.X {
-	                    outputData.Data[i + j] += (*t1).Data[ii + jj] * t2.Data[mm + nn]
+	                	outputElement := (*t1).Data[ii + jj] * t2.Data[mm + nn]
+	                    outputData.Data[el] += outputElement
+	                    // fmt.Println(i, j, el, outputData.Data[el])
 					}
 	            }
 	        }
+	        fmt.Println(i, j, el, outputData.Data[el])
 	    }
 	}
 	fmt.Print("Input Data: ", t1, "\n", "Kernel: ", t2, "\n", "Output Data: ", outputData)
@@ -111,8 +122,8 @@ fmt.Println(stride[0] + 0)
 
 
 func main() {
-	inputData := NewTensor(4, 4)
-	inputData.SetData(4, 4, []float64{1, 5, 1, 4, 4, 4, 2, 7, 2, 3, 9, 3, 4, 4, 4, 9})
+	inputData := NewTensor(7, 7)
+	inputData.SetData(7, 7, []float64{1, 5, 6, 4, 5, 4, 4, 6, 1, 4, 4, 4, 2, 7, 2, 3, 9, 3, 4, 4, 4, 9, 8, 4, 6, 3, 2, 4, 6, 4, 3, 3, 2, 1, 3, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 4, 2, 5, 4})
 	//fmt.Println(inputData)
 	//inputData.Print()
 
@@ -120,7 +131,7 @@ func main() {
 	kernel.SetData(3, 3, []float64{1, 1, 1, 2, 2, 2, 3, 3, 3})
 	//fmt.Println(kernel)
 	//inputData.Print()
-	stride := [2]int{1, 1}
+	stride := [2]int{2, 2}
 	padding := [2]int{0, 0}
 	inputData.Conv2D(kernel, stride, padding)
 }
