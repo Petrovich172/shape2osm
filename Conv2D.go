@@ -98,7 +98,7 @@ el := 0
 					jj := j + n;
 
 	                // ignore input samples which are out of bound
-					if ii >= 0 && ii < (*t1).Size.X && jj >= 0 && jj < (*t1).Size.Y {
+					if ii >= 0 && ii < (*t1).Size.Y && jj >= 0 && jj < (*t1).Size.X {
 						outputElement := 0.0
 						kernelElement := t2.Data[(m * t2.Size.X + n)]
 						if i == 0 {
