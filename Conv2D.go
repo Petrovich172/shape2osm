@@ -83,8 +83,8 @@ outputData := NewTensor(outputX, outputY)
 el := 0
 
 
-	for i := 0; i < outputX; i = (i + stride[0]) {				// rows
-		for j := 0; j < outputY; j = (j + stride[1]) {			// columns
+	for i := 0; i < outputY; i = (i + stride[0]) {				// rows
+		for j := 0; j < outputX; j = (j + stride[1]) {			// columns
 			if i == 0 && j == 0 {
 				el = 0
 			} else {
@@ -105,10 +105,10 @@ el := 0
 							inputElement := (*t1).Data[( (m) * t1.Size.X + n) + j]
 							outputElement = inputElement * kernelElement
 						} else {
-							inputElement := (*t1).Data[ii * (*t1).Size.X + jj]
+							inputElement := (*t1).Data[ii * (*t1).Size.X + jj] // el num 6 instead of el num 8 ???
 							outputElement =  inputElement * kernelElement
 						}
-						// fmt.Println("ii,jj: ", ii, jj, "||", (m * t2.Size.X + n), "||", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)], "outputElement: ", outputElement)
+						fmt.Println("i,j", i, j, "ii,jj: ", ii, jj, "||", (m * t2.Size.X + n), "||", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)], "outputElement: ", outputElement)
 
 						// Filling output array
 						outputData.Data[el] += outputElement
@@ -123,11 +123,11 @@ el := 0
 
 
 func main() {
-	inputData := NewTensor(7, 7)
-	inputData.SetData(7, 7, []float64{1, 5, 6, 4, 5, 4, 4, 6, 1, 4, 4, 4, 2, 7, 2, 3, 9, 3, 4, 4, 4, 9, 8, 4, 6, 3, 2, 4, 6, 4, 3, 3, 2, 1, 3, 1, 1, 1, 1, 1, 1, 1, 2, 2, 3, 4, 2, 5, 4})
+	inputData := NewTensor(8, 9)
+	inputData.SetData(8, 9, []float64{-0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, -0.9, -0.10, 0.11, 0.12, 0.13, 0.14, 0.15, 0.16, -0.17, 0.18, -0.19, 0.20, 0.21, 0.22, 0.23, 0.24, -0.25, 0.26, 0.27, -0.28, 0.29, 0.30, 0.31, 0.32, -0.33, 0.34, 0.35, 0.36, -0.37, 0.38, 0.39, 0.40, -0.41, 0.42, 0.43, 0.44, 0.45, -0.46, 0.47, 0.48, -0.49, 0.50, 0.51, 0.52, 0.53, 0.54, -0.55, 0.56, -0.57, 0.58, 0.59, 0.60, 0.61, 0.62, 0.63, -0.64, -0.65, 0.66, 0.67, 0.68, 0.69, 0.70, 0.71, 0.72})
 
 	kernel := NewTensor(3, 3)
-	kernel.SetData(3, 3, []float64{1, 1, 1, 2, 2, 2, 3, 3, 3})
+	kernel.SetData(3, 3, []float64{0.10466029, -0.06228581, -0.43436298, 0.44050909, -0.07536250, -0.34348075, 0.16456005, 0.18682307, -0.40303048})
 
 	stride := [2]int{1, 1}
 	padding := [2]int{0, 0}
