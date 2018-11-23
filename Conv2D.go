@@ -126,7 +126,7 @@ if stride[1] > 1 {
 			}
 		}
 	}
-	fmt.Print("Input Data: ", t1, "\n", "Kernel: ", t2, "\n", "Output Data: ", outputData)
+	fmt.Print("\nInput Data: ", t1, "\n\n", "Kernel: ", t2, "\n\n", "Output Data", outputData.Size, " :\n\n")
 	return outputData
 }
 
@@ -141,6 +141,5 @@ func main() {
 	stride := [2]int{4, 1}
 	padding := [2]int{0, 0}
 	res := inputData.Conv2D(kernel, stride, padding)
-	fmt.Print("\n\n")
 	res.Print()
 }
