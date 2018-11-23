@@ -117,7 +117,7 @@ if stride[1] > 1 {
 							inputElement := (*t1).Data[ii * (*t1).Size.X + jj]
 							outputElement =  inputElement * kernelElement
 						}
-						fmt.Println("i,j", i, j, "\tii,jj: ", ii, jj, "\t||", (m * t2.Size.X + n), "||\t", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)])
+						// fmt.Println("i,j", i, j, "\tii,jj: ", ii, jj, "\t||", (m * t2.Size.X + n), "||\t", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)])
 
 						// Filling output array
 						outputData.Data[el] += outputElement
@@ -138,7 +138,7 @@ func main() {
 	kernel := NewTensor(3, 3)
 	kernel.SetData(3, 3, []float64{0.10466029, -0.06228581, -0.43436298, 0.44050909, -0.07536250, -0.34348075, 0.16456005, 0.18682307, -0.40303048})
 
-	stride := [2]int{3, 3}
+	stride := [2]int{4, 1}
 	padding := [2]int{0, 0}
 	res := inputData.Conv2D(kernel, stride, padding)
 	fmt.Print("\n\n")
