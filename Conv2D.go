@@ -73,24 +73,33 @@ func (t1 *Tensor) Print() {
 // Conv2D - apply convolution to t1 using t2 kernel
 func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int) Tensor {
 
-outputX := ((*t1).Size.X - t2.Size.X + 2*padding[0])/stride[0] + 1
-outputY := ((*t1).Size.Y - t2.Size.Y + 2*padding[1])/stride[1] + 1
+outputX := ((*t1).Size.X - t2.Size.X + 2*padding[1])/stride[1] + 1
+outputY := ((*t1).Size.Y - t2.Size.Y + 2*padding[0])/stride[0] + 1
 // fmt.Println(outputX, outputY)
 outputData := NewTensor(outputX, outputY)
 
 
 // index for input element in output array
 el := 0
+iLimit := outputY
+jLimit := outputX
+if stride[0] > 1 {
+	iLimit = outputY + stride[0] + 1
+}
+if stride[1] > 1 {
+	jLimit = outputX + stride[1] + 1
+}
 
 
-	for i := 0; i < outputY; i = (i + stride[0]) {				// rows
-		for j := 0; j < outputX; j = (j + stride[1]) {			// columns
+	for i := 0; i < iLimit; i = (i + stride[0]) {				// rows
+		for j := 0; j < jLimit; j = (j + stride[1]) {			// columns
 			if i == 0 && j == 0 {
 				el = 0
 			} else {
 				el += 1
 			}
 			for m := 0; m < t2.Size.X; m++ {		// kernel rows
+				
 				for n := 0; n <	t2.Size.Y; n++ {	// kernel columns
 
 					// index of input signal, used for checking boundary
@@ -105,10 +114,10 @@ el := 0
 							inputElement := (*t1).Data[( (m) * t1.Size.X + n) + j]
 							outputElement = inputElement * kernelElement
 						} else {
-							inputElement := (*t1).Data[ii * (*t1).Size.X + jj] // el num 6 instead of el num 8 ???
+							inputElement := (*t1).Data[ii * (*t1).Size.X + jj]
 							outputElement =  inputElement * kernelElement
 						}
-						fmt.Println("i,j", i, j, "ii,jj: ", ii, jj, "||", (m * t2.Size.X + n), "||", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)], "outputElement: ", outputElement)
+						fmt.Println("i,j", i, j, "\tii,jj: ", ii, jj, "\t||", (m * t2.Size.X + n), "||\t", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)])
 
 						// Filling output array
 						outputData.Data[el] += outputElement
@@ -129,7 +138,9 @@ func main() {
 	kernel := NewTensor(3, 3)
 	kernel.SetData(3, 3, []float64{0.10466029, -0.06228581, -0.43436298, 0.44050909, -0.07536250, -0.34348075, 0.16456005, 0.18682307, -0.40303048})
 
-	stride := [2]int{1, 1}
+	stride := [2]int{3, 3}
 	padding := [2]int{0, 0}
-	inputData.Conv2D(kernel, stride, padding)
+	res := inputData.Conv2D(kernel, stride, padding)
+	fmt.Print("\n\n")
+	res.Print()
 }
