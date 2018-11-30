@@ -76,9 +76,13 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 
 	var outputX int
 	var outputY int
-	var paddingedData []float64
-	verticalPaddingArr := make([]float64, padding[0] * t1.Size.Y + padding[1] * 2)
-	horizontalPaddingArr := make([]float64, padding[1])
+	paddingedDataX := t1.Size.X + padding[1] * 2
+	paddingedDataY := t1.Size.Y + padding[0] * 2
+	paddingedData := NewTensor(paddingedDataX, paddingedDataY)
+	paddingedData.SetData(paddingedDataX, paddingedDataY, make([]float64, (paddingedDataY * paddingedDataX) ) )
+
+	// verticalPaddingArr := make([]float64, (padding[0] * (t1.Size.Y + padding[1] * 2) ) )
+	// horizontalPaddingArr := make([]float64, padding[1])
 
 	if attribute == true {
 		outputX = ( (*t1).Size.X - t2.Size.X + 2*padding[1])/stride[1] + 1
@@ -88,8 +92,8 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 		outputY = ( (*t1).Size.Y - t2.Size.Y)/stride[0] + 1
 	}
 
-	paddingedData = t1.Data
-	fmt.Println("original arr sizes:", (*t1).Size.X, "x", (*t1).Size.Y, "\nlen:", len(t1.Data), len(paddingedData) )
+	// paddingedData = t1.Data
+	fmt.Println("original Tensor sizes:", (*t1).Size.X, "x", (*t1).Size.Y, "\nnew Tensor sizes:", paddingedData.Size.X, "x", paddingedData.Size.Y, "\nlen:", len(t1.Data), len(paddingedData.Data) )
 
 	// for i := 0; i < (*t1).Size.X; i++{
 	// 	paddingedData = append(paddingedData[:1], 0.0)
@@ -97,46 +101,36 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 	// 		fmt.Print(j, ", ")
 	// 	}
 	// }
-
-	for i := 0; i < len(paddingedData); i++ {
-			for j := 0; j < 2; j ++ {
-		    	if j == 0 {
-					fmt.Println("j =", j, "len =", len((paddingedData)[ (i * t1.Size.X + j) : ]) )
-					paddingedData = append(horizontalPaddingArr, (paddingedData)[ (i * t1.Size.X) : ]...)
-					fmt.Println(paddingedData)
-					// inputElement := (*t1).Data[ii * (*t1).Size.X + jj]
-					// break
-				}
-		    	if j ==  1 {
-					// (paddingedData) = append([]float64{t1.Data[0]}, append((paddingedData)[:p], (paddingedData)[p+1:]...)...)
-					fmt.Println("j =", j, "len =", len((paddingedData)[:j+1]) )
-					// paddingedData = append(paddingedData, horizontalPaddingArr, append((paddingedData)[:p], (paddingedData)[p+1:]...)...)
-					paddingedData = append((paddingedData)[ (i * t1.Size.X) : (i * t1.Size.X + t1.Size.Y)], append(horizontalPaddingArr, (paddingedData)[ (i * t1.Size.X + 1) : ]...)...)
-					fmt.Println(paddingedData)
-				}
+	// fmt.Println(paddingedData)
+	el := 0
+	el2 := 0
+	for i := 0; i < (*t1).Size.X; i++ {
+		for j := 0; j < (*t1).Size.Y; j ++ {
+			if i == 0 && j == 0 {
+				el = 0
+			} else {
+				el += 1
 			}
-		os.Exit(3)	
-    	if i == 0 {
-			fmt.Println("i =", i, "len =", len((paddingedData)[:i+1]) )
-			paddingedData = append(verticalPaddingArr, paddingedData...)
-			// break
-		}
-    	if i == (len(t1.Data) - 1) {
-			// (paddingedData) = append([]float64{t1.Data[0]}, append((paddingedData)[:p], (paddingedData)[p+1:]...)...)
-			fmt.Println("i =", i, "len =", len((paddingedData)[:i+1]) )
-			// paddingedData = append(paddingedData, verticalPaddingArr, append((paddingedData)[:p], (paddingedData)[p+1:]...)...)
-			paddingedData = append(paddingedData, verticalPaddingArr...)
+			if i == 0 {
+				el2 += 1
+			}
+			paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1]] = t1.Data[el]
+			fmt.Println( t1.Data[el], ((i + padding[0]) * paddingedDataX + j + el2 + padding[1]) )
+			fmt.Println("i =", i, "j =", j)	
 		}
 	}
-	fmt.Println(paddingedData)
-	fmt.Println("paddinged len:", len(paddingedData), "\nverticalPaddingArr:", len(verticalPaddingArr), "\npaddinged len - verticalPaddingArr len =", (len(paddingedData) - 2*len(verticalPaddingArr) ) )
-
+	// fmt.Println(paddingedData)
+	// fmt.Println("paddinged len:", len(paddingedData), "\nverticalPaddingArr:", len(verticalPaddingArr), "\npaddinged len - verticalPaddingArr len =", (len(paddingedData) - 2*len(verticalPaddingArr) ) )
+	fmt.Println(paddingedDataX, paddingedDataY)
+	fmt.Println(len(paddingedData.Data), paddingedDataX*paddingedDataY)
+	
+	paddingedData.Print()
 	os.Exit(3)
 	outputData := NewTensor(outputX, outputY)
 
 
 	// index for input element in output array
-	el := 0
+	el = 0
 	iLimit := outputY
 	jLimit := outputX
 	if stride[0] > 1 {
@@ -166,7 +160,7 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 							outputElement := 0.0
 							kernelElement := t2.Data[(m * t2.Size.X + n)]
 							if i == 0 {
-								inputElement := (*t1).Data[( (m) * t1.Size.X + n) + j]
+								inputElement := (*t1).Data[( m * t1.Size.X + n) + j]
 								outputElement = inputElement * kernelElement
 							} else {
 								inputElement := (*t1).Data[ii * (*t1).Size.X + jj]
@@ -198,7 +192,7 @@ func main() {
 	// kernel.SetData(5, 5, []float64{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0})
 
 	stride := [2]int{1, 1}
-	padding := [2]int{2, 2}
+	padding := [2]int{0, 2}
 	res := inputData.Conv2D(kernel, stride, padding, true)
 	res.Print()
 }
