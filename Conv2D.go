@@ -111,11 +111,11 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 	// Applying padding options to output tensor (if needed)
 
 	if attribute == true {
-		outputX = ( paddingedData.Size.X - t2.Size.X + 2*padding[1])/stride[1] + 1
-		outputY = ( paddingedData.Size.Y - t2.Size.Y + 2*padding[0])/stride[0] + 1
+		outputX = ( (*t1).Size.X - t2.Size.X + 2*padding[1])/stride[1] + 1
+		outputY = ( (*t1).Size.Y - t2.Size.Y + 2*padding[0])/stride[0] + 1
 	} else {
-		outputX = ( paddingedData.Size.X - t2.Size.X)/stride[1] + 1
-		outputY = ( paddingedData.Size.Y - t2.Size.Y)/stride[0] + 1
+		outputX = ( (*t1).Size.X - t2.Size.X)/stride[1] + 1
+		outputY = ( (*t1).Size.Y - t2.Size.Y)/stride[0] + 1
 	}	
 	outputData := NewTensor(outputX, outputY)
 
@@ -184,7 +184,7 @@ func main() {
 	// kernel.SetData(5, 5, []float64{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0})
 
 	stride := [2]int{1, 1}
-	padding := [2]int{1, 1}
+	padding := [2]int{5, 3}
 	res := inputData.Conv2D(kernel, stride, padding, false)
 	res.Print()
 }
