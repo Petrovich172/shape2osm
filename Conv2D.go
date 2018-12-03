@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
+	// "os"
 )
 
 // Point - dimensions
@@ -76,75 +76,54 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 
 	var outputX int
 	var outputY int
+
+	// Applying padding options to original tensor
 	paddingedDataX := t1.Size.X + padding[1] * 2
 	paddingedDataY := t1.Size.Y + padding[0] * 2
 	paddingedData := NewTensor(paddingedDataX, paddingedDataY)
 	paddingedData.SetData(paddingedDataX, paddingedDataY, make([]float64, (paddingedDataY * paddingedDataX) ) )
 
-	// verticalPaddingArr := make([]float64, (padding[0] * (t1.Size.Y + padding[1] * 2) ) )
-	// horizontalPaddingArr := make([]float64, padding[1])
+	// fmt.Println("original Tensor sizes:", (*t1).Size.X, "x", (*t1).Size.Y, "\nnew Tensor sizes:", paddingedData.Size.X, "x", paddingedData.Size.Y, "\nlen:", len(t1.Data), len(paddingedData.Data) )
 
-	if attribute == true {
-		outputX = ( (*t1).Size.X - t2.Size.X + 2*padding[1])/stride[1] + 1
-		outputY = ( (*t1).Size.Y - t2.Size.Y + 2*padding[0])/stride[0] + 1
-	} else {
-		outputX = ( (*t1).Size.X - t2.Size.X)/stride[1] + 1
-		outputY = ( (*t1).Size.Y - t2.Size.Y)/stride[0] + 1
-	}
-
-	// paddingedData = t1.Data
-	fmt.Println("original Tensor sizes:", (*t1).Size.X, "x", (*t1).Size.Y, "\nnew Tensor sizes:", paddingedData.Size.X, "x", paddingedData.Size.Y, "\nlen:", len(t1.Data), len(paddingedData.Data) )
-
-	// for i := 0; i < (*t1).Size.X; i++{
-	// 	paddingedData = append(paddingedData[:1], 0.0)
-	// 	for j := 0; j < (*t1).Size.Y; j++{
-	// 		fmt.Print(j, ", ")
-	// 	}
-	// }
-	// fmt.Println(paddingedData)
-	el := 0 // индекс элемента в оригинальном массиве
-	el2 := 0 // добавочный индекс для смещения в формируемом массиве
-	for i := 0; i < (*t1).Size.Y; i++ {
-		for j := 0; j < (*t1).Size.X; j ++ {
+	el := 0 // Original tensor element index
+	el2 := 0 // Paddinged tensor element index
+	for i := 0; i < (*t1).Size.Y; i++ { 		// rows
+		for j := 0; j < (*t1).Size.X; j ++ {	//columns
 			if i == 0 && j == 0 {
 				el = 0
 				el2 = padding[0] * paddingedDataX + padding[1]
+			}
+			if j == 0 && i != 0 {
+				el2 += 2*padding[1]
 			} else {
 				el += 1
 				el2 += 1 
 			}
-			if j == 0 && i != 0 {
-			// || (j == 0 && i != 0) {
-				el2 += 2*padding[1]
-				// paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1] ] = t1.Data[el]
-			} 
-			if j == 0 && i != 0 {
-
-				// el2 = el2 + ( (*t1).Size.Y )
-				// paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1] ] = t1.Data[el]
-			} //else {
-				// el2 = el2 + ( (*t1).Size.Y - 1 )
-				
-			//}
-			// paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1]] = t1.Data[el] - вертикальный норм, горизонтальный по диагонали
 			paddingedData.Data[el2] = t1.Data[el]
-			fmt.Println("t1.Data[el]:", t1.Data[el], "paddingedData[el]:", paddingedData.Data[el2] )
-			fmt.Println("el:", el, "el2:", el2)
-			fmt.Println("i =", i, "j =", j)
+			// fmt.Println("t1.Data[el]:", t1.Data[el], "paddingedData[el]:", paddingedData.Data[el2] )
+			// fmt.Println("el:", el, "el2:", el2)
+			// fmt.Println("i =", i, "j =", j)
 		}
 	}
-	// fmt.Println(paddingedData)
-	// fmt.Println("paddinged len:", len(paddingedData), "\nverticalPaddingArr:", len(verticalPaddingArr), "\npaddinged len - verticalPaddingArr len =", (len(paddingedData) - 2*len(verticalPaddingArr) ) )
-	fmt.Println(paddingedDataX, paddingedDataY)
-	fmt.Println(len(paddingedData.Data), paddingedDataX*paddingedDataY)
+	// paddingedData.Print()
+
+	// Applying padding options to output tensor (if needed)
 	
-	paddingedData.Print()
-	os.Exit(3)
+	// *t1 = *paddingedData
+	// (*t1).Print()
+	// os.Exit(3)
+
+
+	if attribute == true {
+		outputX = ( paddingedData.Size.X - t2.Size.X + 2*padding[1])/stride[1] + 1
+		outputY = ( paddingedData.Size.Y - t2.Size.Y + 2*padding[0])/stride[0] + 1
+	} else {
+		outputX = ( paddingedData.Size.X - t2.Size.X)/stride[1] + 1
+		outputY = ( paddingedData.Size.Y - t2.Size.Y)/stride[0] + 1
+	}	
 	outputData := NewTensor(outputX, outputY)
 
 
-	// index for input element in output array
-	el = 0
 	iLimit := outputY
 	jLimit := outputX
 	if stride[0] > 1 {
@@ -153,6 +132,8 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 	if stride[1] > 1 {
 		jLimit = outputX + stride[1] + 1
 	}
+
+	el = 0 // index for input element in output array
 
 		for i := 0; i < iLimit; i = (i + stride[0]) {				// rows
 			for j := 0; j < jLimit; j = (j + stride[1]) {			// columns
@@ -170,17 +151,17 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 						jj := j + n;
 
 		                // ignore input samples which are out of bound
-						if ii >= 0 && ii < (*t1).Size.Y && jj >= 0 && jj < (*t1).Size.X {
+						if ii >= 0 && ii < paddingedData.Size.Y && jj >= 0 && jj < paddingedData.Size.X {
 							outputElement := 0.0
 							kernelElement := t2.Data[(m * t2.Size.X + n)]
 							if i == 0 {
-								inputElement := (*t1).Data[( m * t1.Size.X + n) + j]
+								inputElement := paddingedData.Data[( m * paddingedData.Size.X + n) + j]
 								outputElement = inputElement * kernelElement
 							} else {
-								inputElement := (*t1).Data[ii * (*t1).Size.X + jj]
+								inputElement := paddingedData.Data[ii * paddingedData.Size.X + jj]
 								outputElement =  inputElement * kernelElement
 							}
-							fmt.Println("i,j", i, j, "\tii,jj: ", ii, jj, "\t||", (m * t2.Size.X + n), "||\t", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)])
+							// fmt.Println("i,j", i, j, "\tii,jj: ", ii, jj, "\t||", (m * t2.Size.X + n), "||\t", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)])
 
 							// Filling output array
 							outputData.Data[el] += outputElement
@@ -206,7 +187,7 @@ func main() {
 	// kernel.SetData(5, 5, []float64{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0})
 
 	stride := [2]int{1, 1}
-	padding := [2]int{5, 3}
-	res := inputData.Conv2D(kernel, stride, padding, true)
+	padding := [2]int{1, 1}
+	res := inputData.Conv2D(kernel, stride, padding, false)
 	res.Print()
 }
