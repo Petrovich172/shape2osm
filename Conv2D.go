@@ -102,21 +102,35 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 	// 	}
 	// }
 	// fmt.Println(paddingedData)
-	el := 0
-	el2 := 0
-	for i := 0; i < (*t1).Size.X; i++ {
-		for j := 0; j < (*t1).Size.Y; j ++ {
+	el := 0 // индекс элемента в оригинальном массиве
+	el2 := 0 // добавочный индекс для смещения в формируемом массиве
+	for i := 0; i < (*t1).Size.Y; i++ {
+		for j := 0; j < (*t1).Size.X; j ++ {
 			if i == 0 && j == 0 {
 				el = 0
+				el2 = padding[0] * paddingedDataX + padding[1]
 			} else {
 				el += 1
+				el2 += 1 
 			}
-			if i == 0 {
-				el2 += 1
-			}
-			paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1]] = t1.Data[el]
-			fmt.Println( t1.Data[el], ((i + padding[0]) * paddingedDataX + j + el2 + padding[1]) )
-			fmt.Println("i =", i, "j =", j)	
+			if j == 0 && i != 0 {
+			// || (j == 0 && i != 0) {
+				el2 += 2*padding[1]
+				// paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1] ] = t1.Data[el]
+			} 
+			if j == 0 && i != 0 {
+
+				// el2 = el2 + ( (*t1).Size.Y )
+				// paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1] ] = t1.Data[el]
+			} //else {
+				// el2 = el2 + ( (*t1).Size.Y - 1 )
+				
+			//}
+			// paddingedData.Data[ ( (i + padding[0]) * paddingedDataX) + j + el2 + padding[1]] = t1.Data[el] - вертикальный норм, горизонтальный по диагонали
+			paddingedData.Data[el2] = t1.Data[el]
+			fmt.Println("t1.Data[el]:", t1.Data[el], "paddingedData[el]:", paddingedData.Data[el2] )
+			fmt.Println("el:", el, "el2:", el2)
+			fmt.Println("i =", i, "j =", j)
 		}
 	}
 	// fmt.Println(paddingedData)
@@ -192,7 +206,7 @@ func main() {
 	// kernel.SetData(5, 5, []float64{0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0 ,0})
 
 	stride := [2]int{1, 1}
-	padding := [2]int{0, 2}
+	padding := [2]int{5, 3}
 	res := inputData.Conv2D(kernel, stride, padding, true)
 	res.Print()
 }
