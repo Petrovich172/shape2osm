@@ -92,12 +92,12 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 			if i == 0 && j == 0 {
 				el = 0
 				el2 = padding[0] * paddingedDataX + padding[1]
+			} else {
+				el += 1
+				el2 += 1
 			}
 			if j == 0 && i != 0 {
 				el2 += 2*padding[1]
-			} else {
-				el += 1
-				el2 += 1 
 			}
 			paddingedData.Data[el2] = t1.Data[el]
 			// fmt.Println("t1.Data[el]:", t1.Data[el], "paddingedData[el]:", paddingedData.Data[el2] )
@@ -106,13 +106,9 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 		}
 	}
 	// paddingedData.Print()
-
-	// Applying padding options to output tensor (if needed)
-	
-	// *t1 = *paddingedData
-	// (*t1).Print()
 	// os.Exit(3)
 
+	// Applying padding options to output tensor (if needed)
 
 	if attribute == true {
 		outputX = ( paddingedData.Size.X - t2.Size.X + 2*padding[1])/stride[1] + 1
@@ -132,7 +128,7 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 	if stride[1] > 1 {
 		jLimit = outputX + stride[1] + 1
 	}
-
+	paddingedData.Print()
 	el = 0 // index for input element in output array
 
 		for i := 0; i < iLimit; i = (i + stride[0]) {				// rows
@@ -162,7 +158,8 @@ func (t1 *Tensor) Conv2D (t2 Tensor, stride [2]int, padding [2]int, attribute bo
 								outputElement =  inputElement * kernelElement
 							}
 							// fmt.Println("i,j", i, j, "\tii,jj: ", ii, jj, "\t||", (m * t2.Size.X + n), "||\t", (*t1).Data[ii * (*t1).Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)])
-
+							// fmt.Println("i,j", i, j, "\tii,jj: ", ii, jj, "\t||", (m * t2.Size.X + n), "||\t", paddingedData.Data[ii * paddingedData.Size.X + jj], "*", t2.Data[(m * t2.Size.X + n)])
+							// os.Exit(3)
 							// Filling output array
 							outputData.Data[el] += outputElement
 						}
