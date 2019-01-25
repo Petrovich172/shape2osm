@@ -4,47 +4,6 @@
 // 	"fmt"
 // )
 
-// func Sqrt(x float64) (int, int) {
-// 	z := 1.0
-// 	y := 0.0
-// 	a := 0
-// 	// for (x / (z * z)) > 1.0 {
-// 	for z*z < 25 {
-// 		z -= (z*z - x) / (2 * z)
-// 		y = (x / (z * z))
-// 		fmt.Println(y)
-// 		a ++
-// 	}
-// 	return int(z), int(a)
-// }
-
-// func main() {
-// 	fmt.Println(Sqrt(81))
-// }
-
-// package main
-
-// import (
-// 	"fmt"
-// //	"runtime"
-// )
-
-// func switcher_checker(os string) string {
-// 	switch os {
-// 	case "darwin":
-// 		os = "OS X."
-// 	case "linux":
-// 		os = "Linux."
-// 	}
-// 	return os
-// }
-
-// func main() {
-// 	fmt.Print("Go runs on ")
-// 	fmt.Printf(switcher_checker("darwin"))
-// 	// fmt.Printf("%s.", os)
-// }
-
 package main
 
 import (
