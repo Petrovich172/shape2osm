@@ -1,99 +1,138 @@
-  <Edge>
-      <id>17579610</id>
-      <oneway>1</oneway>
-      <surface>2</surface>
-      <highway>unclassified</highway>
-      <geom>
-          <Type>MultiLineString</Type>
-          <Coordinates>4.19645091e+06</Coordinates>
-          <Coordinates>7.50852091e+06</Coordinates>
-          <Coordinates>4.1964517e+06</Coordinates>
-          <Coordinates>7.50852368e+06</Coordinates>
-          <Coordinates>4.19648206e+06</Coordinates>
-          <Coordinates>7.50858807e+06</Coordinates>
-          <Coordinates>4.19648615e+06</Coordinates>
-          <Coordinates>7.50859269e+06</Coordinates>
-          <Coordinates>4.19649077e+06</Coordinates>
-          <Coordinates>7.50859679e+06</Coordinates>
-          <Coordinates>4.19649584e+06</Coordinates>
-          <Coordinates>7.50860032e+06</Coordinates>
-          <Coordinates>4.19650131e+06</Coordinates>
-          <Coordinates>7.50860324e+06</Coordinates>
-          <Coordinates>4.19650571e+06</Coordinates>
-          <Coordinates>7.50860503e+06</Coordinates>
-          <Coordinates>4.19651025e+06</Coordinates>
-          <Coordinates>7.50860639e+06</Coordinates>
-          <Coordinates>4.19651491e+06</Coordinates>
-          <Coordinates>7.50860734e+06</Coordinates>
-          <Coordinates>4.19651964e+06</Coordinates>
-          <Coordinates>7.50860789e+06</Coordinates>
-          <Coordinates>4.19652438e+06</Coordinates>
-          <Coordinates>7.50860799e+06</Coordinates>
-          <Coordinates>4.19652913e+06</Coordinates>
-          <Coordinates>7.50860766e+06</Coordinates>
-          <Coordinates>4.19653381e+06</Coordinates>
-          <Coordinates>7.50860691e+06</Coordinates>
-          <Coordinates>4.19653842e+06</Coordinates>
-          <Coordinates>7.50860574e+06</Coordinates>
-          <Coordinates>4.19655347e+06</Coordinates>
-          <Coordinates>7.50859866e+06</Coordinates>
-          <Coordinates>4.19656802e+06</Coordinates>
-          <Coordinates>7.50858915e+06</Coordinates>
-          <Coordinates>4.19658178e+06</Coordinates>
-          <Coordinates>7.50857706e+06</Coordinates>
-      </geom>
-  </Edge>
-  <Edge>
-      <id>12553257</id>
-      <oneway>0</oneway>
-      <surface>2</surface>
-      <highway>unclassified</highway>
-      <geom>
-          <Type>MultiLineString</Type>
-          <Coordinates>4.19710774e+06</Coordinates>
-          <Coordinates>7.50826946e+06</Coordinates>
-          <Coordinates>4.19710848e+06</Coordinates>
-          <Coordinates>7.50826139e+06</Coordinates>
-          <Coordinates>4.1971096e+06</Coordinates>
-          <Coordinates>7.50825405e+06</Coordinates>
-      </geom>
-  </Edge>
-  <Edge>
-      <id>12605229</id>
-      <oneway>0</oneway>
-      <surface>2</surface>
-      <highway>unclassified</highway>
-      <geom>
-          <Type>MultiLineString</Type>
-          <Coordinates>4.19695285e+06</Coordinates>
-          <Coordinates>7.50856679e+06</Coordinates>
-          <Coordinates>4.19692258e+06</Coordinates>
-          <Coordinates>7.50855624e+06</Coordinates>
-      </geom>
-  </Edge>
-  <Edge>
-      <id>12553468</id>
-      <oneway>0</oneway>
-      <surface>2</surface>
-      <highway>unclassified</highway>
-      <geom>
-          <Type>MultiLineString</Type>
-          <Coordinates>4.19687289e+06</Coordinates>
-          <Coordinates>7.50830276e+06</Coordinates>
-          <Coordinates>4.19689792e+06</Coordinates>
-          <Coordinates>7.50831104e+06</Coordinates>
-      </geom>
-  </Edge>
-  <Edge>
-      <id>12346859</id>
-      <oneway>1</oneway>
-      <surface>2</surface>
-      <highway>unclassified</highway>
-      <geom>
-          <Type>MultiLineString</Type>
-          <Coordinates>4.1962926e+06</Coordinates>
-          <Coordinates>7.50835007e+06</Coordinates>
-          <Coordinates>4.19632064e+06</Coordinates>
-          <Coordinates>7.50834271e+06</Coordinates>
-      </geom>
-  </Edge>
+  <Map>
+      <bounds minlat="0" minlon="0" maxlat="0" maxlon="0"></bounds>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19645091e+06" lon="7.50852091e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.1964517e+06" lon="7.50852368e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19648206e+06" lon="7.50858807e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19648615e+06" lon="7.50859269e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19649077e+06" lon="7.50859679e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19649584e+06" lon="7.50860032e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19650131e+06" lon="7.50860324e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19650571e+06" lon="7.50860503e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19651025e+06" lon="7.50860639e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19651491e+06" lon="7.50860734e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19651964e+06" lon="7.50860789e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19652438e+06" lon="7.50860799e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19652913e+06" lon="7.50860766e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19653381e+06" lon="7.50860691e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19653842e+06" lon="7.50860574e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19655347e+06" lon="7.50859866e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19656802e+06" lon="7.50858915e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="2431074399724039541" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19658178e+06" lon="7.50857706e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="5864379541603903257" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19710774e+06" lon="7.50826946e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="5864379541603903257" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19710848e+06" lon="7.50826139e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="5864379541603903257" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.1971096e+06" lon="7.50825405e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="6196522365232470547" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19695285e+06" lon="7.50856679e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="6196522365232470547" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19692258e+06" lon="7.50855624e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="5797861749467499218" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19687289e+06" lon="7.50830276e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="5797861749467499218" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19689792e+06" lon="7.50831104e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="4154943554711330841" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.1962926e+06" lon="7.50835007e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+      <node id="4154943554711330841" version="0" timestamp="0001-01-01T00:00:00Z" uid="0" user="" changeset="0" lat="4.19632064e+06" lon="7.50834271e+06">
+          <Loc>
+              <Type></Type>
+          </Loc>
+      </node>
+  </Map>

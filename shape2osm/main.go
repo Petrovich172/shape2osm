@@ -3,11 +3,14 @@ package main
 import (
 	"log"
 	"github.com/go-pg/pg"
+	"math/rand"
+	// "encoding/json"
 	// "io/ioutil"
 	"io"
 	"os"
 	"encoding/xml"
 	utils "./pkgs/utils"
+	"./pkgs/cfg"
 
 	// inits "pjob/pkgs/init"
 
@@ -76,9 +79,48 @@ func main() {
 	// byteValue, _ := ioutil.ReadAll(xmlFile)
 
 	// we initialize our Users array
-	var data []Edge
+	// var data []Edge
+	var xmlData cfg.Map
+	log.Println(xmlData)
 
-	data = getSomeData(db)
+	dbData := getSomeData(db)
+	generate := rand.New(rand.NewSource(99)).Int63
+	var nodeId cfg.Elem
+
+	for i := 0; i < len(dbData); i++ {
+		// log.Println("rand:", nodeId)
+		// log.Println("smth:","\n",dbData[i].Geom)
+		// log.Println("smth else:","\n",dbData[i].Geom.Coordinates[0])
+
+		node := dbData[i].Geom.Coordinates[0]
+		var nodeIDs []int64
+		for y := 0; y < len(node); y++ {
+			nodeId.ID = generate()
+			xmlData.Nodes = append(	xmlData.Nodes, cfg.Node{
+				Elem:	nodeId,
+				Lat:	node[y][0],
+				Lng:	node[y][1],
+				}	)
+			nodeIDs = append(nodeIDs, nodeId.ID)
+		}
+
+		for yy := 0; yy < len(nodeIDs); yy++ {
+		// for yy := 0; yy < len(nodeIDs); yy++ {
+			var tempId make([]struct {	ID int64 `xml:"ref,attr"`}, 3)
+			tempId[yy].ID = nodeIDs[yy]
+			log.Println(tempId)
+			// log.Println("xmlData.Ways[i].Nds:",xmlData.Ways[i].Nds)
+			// xmlData.Ways[i].Nds[0].ID = tempId.ID
+			xmlData.Ways = append(xmlData.Ways, cfg.Way{
+				Nds:	tempId,
+			}	)
+		}
+			// xmlData.Ways[i].Nds = append( xmlData.Ways[i].Nds, struct{
+				// ID:	nodeIDs[yy],},
+				// }	)
+			
+	}
+
 	// we unmarshal our byteArray which contains our
 	// xmlFiles content into 'users' which we defined above
 	// xml.Unmarshal(	getSomeData(db), &data	)	
@@ -96,7 +138,7 @@ func main() {
 	newFile := io.Writer(f)
 	enc := xml.NewEncoder(newFile)
 	enc.Indent("  ", "    ")
-    	if err := enc.Encode(&data); err != nil {
+    	if err := enc.Encode(&xmlData); err != nil {
 				log.Printf("error: %v\n", err)
 		}
 }
@@ -110,5 +152,6 @@ func getSomeData(db *pg.DB) []Edge {
 		log.Println("some shit happend:", "\n", err)		
 	}
 	log.Println("query:","\n",ret)
+	// tmp := json.Marshal(ret)
 	return ret
 }
