@@ -5,50 +5,25 @@ import (
 	"github.com/go-pg/pg"
 	"math/rand"
 	// "encoding/json"
-	// "io/ioutil"
+	"io/ioutil"
 	"io"
 	"os"
 	"encoding/xml"
 	utils "./pkgs/utils"
 	"./pkgs/cfg"
-
-	// inits "pjob/pkgs/init"
-
-	// "github.com/gin-gonic/gin"
-	// "github.com/go-redis/redis"
 )
 
-
-// our struct which contains the complete
-// array of all Users in the file
+// Struct for geo data from DB
 type Edge struct {
-	// XMLName xml.Name `xml:"users"`
-	Id	string	`xml:"id"	sql:"id"`
+	Id	int64	`xml:"id"	sql:"id"`
+	Edge2id	int64	`xml:"ref"	sql:"edge2id"`
+	Edge3id	int64	`xml:"ref"	sql:"edge3id"`
+	Edge4id	int64	`xml:"ref"	sql:"edge4id"`
+	Edge5id	int64	`xml:"ref"	sql:"edge5id"`
 	Oneway	string	`xml:"oneway"	sql:"oneway"`
 	Surface	string	`xml:"surface"	sql:"surface"`
 	Highway	string	`xml:"highway"	sql:"highway"`
 	Geom	utils.MultiLineString	`xml:"geom"	sql:"geom"`
-	// Users   []User   `xml:"user"`
-}
-
-// the user struct, this contains our
-// Type attribute, our user's name and
-// a social struct which will contain all
-// our social links
-type User struct {
-	XMLName xml.Name `xml:"user"`
-	Type    string   `xml:"type,attr"`
-	Name    string   `xml:"name"`
-	Social  Social   `xml:"social"`
-}
-
-// a simple struct which contains all our
-// social links
-type Social struct {
-	XMLName  xml.Name `xml:"social"`
-	Facebook string   `xml:"facebook"`
-	Twitter  string   `xml:"twitter"`
-	Youtube  string   `xml:"youtube"`
 }
 
 
@@ -63,73 +38,98 @@ func main() {
 		})
 	defer db.Close()
 
-	// Open our xmlFile
-	xmlFile, err := os.Open("sample.xml")
-	// if we os.Open returns an error then handle it
-	if err != nil {
-		log.Println(err)
-	}
-
-	log.Println("Successfully Opened sample.xml")
-	// defer the closing of our xmlFile so that we can parse it later on
-	defer xmlFile.Close()
-
-	// read our opened xmlFile as a byte array.
-	
-	// byteValue, _ := ioutil.ReadAll(xmlFile)
-
-	// we initialize our Users array
-	// var data []Edge
+	// xmlData — body struct for .xml 
 	var xmlData cfg.Map
-	log.Println(xmlData)
 
-	dbData := getSomeData(db)
+	// initiating random ID for nodes
 	generate := rand.New(rand.NewSource(99)).Int63
-	var nodeId cfg.Elem
 
+	// initiating structs for nodes, ways and relations ID
+	var nodeId cfg.Elem
+	var wayId cfg.Elem
+	var relId cfg.Elem
+
+	// node Id array in Ways struct
+	var TempNodeId cfg.NdId
+	var nodeIDs []cfg.NdId
+
+	// tags and members array
+	var arrTags []cfg.Tag
+	var arrMember []cfg.Member
+
+	// querying geo from DB
+	dbData := getSomeData(db)
+
+	// iterating every row from DB
 	for i := 0; i < len(dbData); i++ {
-		// log.Println("rand:", nodeId)
-		// log.Println("smth:","\n",dbData[i].Geom)
-		// log.Println("smth else:","\n",dbData[i].Geom.Coordinates[0])
 
 		node := dbData[i].Geom.Coordinates[0]
-		var nodeIDs []int64
+		wayId.ID = dbData[i].Id
+		nodeIDs = nil
+		arrTags = nil
+		arrMember = nil
+		// filling tags array
+		arrTags = append(arrTags, 
+			cfg.Tag{
+				Key:	"Highway",
+				Value:	dbData[i].Highway,
+			}, 
+			cfg.Tag{
+				Key:	"Oneway",
+				Value:	dbData[i].Oneway,
+			},
+			cfg.Tag{
+				Key:	"Surface",
+				Value:	dbData[i].Surface,
+			}	)
+		// filling members array => relations
+		arrMember = append(arrMember, 
+			cfg.Member{
+				Type:	"way",
+				Ref:	dbData[i].Id,
+				Role:	"",
+				},
+			cfg.Member{
+				Type:	"way",
+				Ref:	dbData[i].Edge2id,
+				Role:	"",
+			}	)
+		relId.ID = generate()
+		xmlData.Relations = append(xmlData.Relations, cfg.Relation{
+			Elem:	relId,
+			Members:	arrMember,
+			})
+
+		// iterating every node
 		for y := 0; y < len(node); y++ {
 			nodeId.ID = generate()
-			xmlData.Nodes = append(	xmlData.Nodes, cfg.Node{
+			xmlData.Nodes = append(xmlData.Nodes, cfg.Node{
 				Elem:	nodeId,
 				Lat:	node[y][0],
 				Lng:	node[y][1],
+				Tags:	arrTags,
 				}	)
-			nodeIDs = append(nodeIDs, nodeId.ID)
+			// making array of node ID for ways
+			TempNodeId.ID = nodeId.ID
+			nodeIDs = append(nodeIDs, TempNodeId)
 		}
 
-		for yy := 0; yy < len(nodeIDs); yy++ {
-		// for yy := 0; yy < len(nodeIDs); yy++ {
-			var tempId make([]struct {	ID int64 `xml:"ref,attr"`}, 3)
-			tempId[yy].ID = nodeIDs[yy]
-			log.Println(tempId)
-			// log.Println("xmlData.Ways[i].Nds:",xmlData.Ways[i].Nds)
-			// xmlData.Ways[i].Nds[0].ID = tempId.ID
-			xmlData.Ways = append(xmlData.Ways, cfg.Way{
-				Nds:	tempId,
+		// filling .xml with ways
+		xmlData.Ways = append(xmlData.Ways, cfg.Way{
+			Elem:	wayId,
+			Nds:	nodeIDs,
+			Tags:	arrTags,
 			}	)
-		}
-			// xmlData.Ways[i].Nds = append( xmlData.Ways[i].Nds, struct{
-				// ID:	nodeIDs[yy],},
-				// }	)
-			
 	}
 
+		// Encode to XML
+	// x, _ := xml.MarshalIndent(WayTags(xmlData.Ways[0].Tags), "", "  ")
+	// log.Println(string(x))
+	
+	// log.Println(xmlData)
 	// we unmarshal our byteArray which contains our
 	// xmlFiles content into 'users' which we defined above
 	// xml.Unmarshal(	getSomeData(db), &data	)	
-
-	// for i := 0; i < len(data); i++ {
-	// 	log.Println("User Type: " + data[i].Id)
-	// 	log.Println("User Name: " + data.Users[i].Highway)
-	// 	log.Println("Facebook Url: " + data.Users[i].Geom)
-	// }
 
 	// creating output xml file
 	f, err := os.Create("out.xml")
@@ -139,19 +139,39 @@ func main() {
 	enc := xml.NewEncoder(newFile)
 	enc.Indent("  ", "    ")
     	if err := enc.Encode(&xmlData); err != nil {
-				log.Printf("error: %v\n", err)
+				log.Printf("error: %v\n", err, "%v\n", enc)
+				// log.Println("map:", xmlData)
 		}
 }
 
+
+// Get geo data from DB
 func getSomeData(db *pg.DB) []Edge {
 	var ret []Edge
 	var err error
-	sqlString := "SELECT id, ST_AsGeoJSON(geom) as geom, oneway, surface, highway FROM public.tline_smaller limit 5"
+	sqlString := `SELECT "tline".id as id, ST_AsGeoJSON(ST_Transform("tline".geom, 4326)) as geom, oneway, surface, highway, edge2id, edge3id, edge4id, edge5id
+				FROM graph.tline as "tline", graph.gman as "gman" 
+				where "tline".id = "gman".edge1id
+				limit 100`
 	_, err = db.Model().Query(&ret, sqlString)
 	if err != nil {
 		log.Println("some shit happend:", "\n", err)		
 	}
 	log.Println("query:","\n",ret)
-	// tmp := json.Marshal(ret)
 	return ret
+}
+
+func ReadXml(filename string) []byte {
+	// Some stuff to open & read .xml file
+	// Open our .xml file
+	xmlFile, err := os.Open(filename)
+	if err != nil {
+		log.Println(err)
+	}
+	log.Println("Successfully opened", filename)
+	defer xmlFile.Close()
+
+	// read our .xml file as a byte array.	
+	byteValue, _ := ioutil.ReadAll(xmlFile)
+	return byteValue
 }
