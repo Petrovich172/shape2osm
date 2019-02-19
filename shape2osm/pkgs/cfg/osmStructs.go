@@ -5,11 +5,14 @@ import (
 	"io"
 	"os"
 	"strings"
-	"time"
+	// "time"
 )
 
 // Osm body struct
-type Map struct {
+type Osm struct {
+	XMLName xml.Name `xml:"osm"`
+	Version   string       `xml:"version,attr"`
+	Ts        string `xml:"timestamp,attr"`
 	Bounds    Bounds
 	Nodes     []Node
 	Ways      []Way
@@ -38,15 +41,16 @@ type Tag struct {
 	Value   string   `xml:"v,attr"`
 }
 
-// Elem is a OSM base element
+// Elem is a Osm base element
 type Elem struct {
-	ID        int64 `xml:"id,attr"`
-	Loc       Location
+	ID        int32 `xml:"id,attr"`
+	// Loc       Location
 	Version   int       `xml:"version,attr"`
-	Ts        time.Time `xml:"timestamp,attr"`
-	UID       int64     `xml:"uid,attr"`
-	User      string    `xml:"user,attr"`
-	ChangeSet int64     `xml:"changeset,attr"`
+	// Ts        time.Time `xml:"timestamp,attr"`
+	Ts        string `xml:"timestamp,attr"`
+	// UID       int32     `xml:"uid,attr"`
+	// User      string    `xml:"user,attr"`
+	// ChangeSet int32     `xml:"changeset,attr"`
 }
 
 // Node structure
@@ -69,13 +73,13 @@ type Way struct {
 
 // Node Id in Way struct
 type NdId struct {
-		ID int64 `xml:"ref,attr"`
+		ID int32 `xml:"ref,attr"`
 }
 
 // Member struct
 type Member struct {
 	Type string `xml:"type,attr"`
-	Ref  int64  `xml:"ref,attr"`
+	Ref  int32  `xml:"ref,attr"`
 	Role string `xml:"role,attr"`
 }
 
@@ -91,8 +95,8 @@ type Relation struct {
 
 
 
-// DecodeFile an OSM file
-func DecodeFile(fileName string) (*Map, error) {
+// DecodeFile an Osm file
+func DecodeFile(fileName string) (*Osm, error) {
 
 	file, err := os.Open(fileName)
 	if err != nil {
@@ -103,14 +107,14 @@ func DecodeFile(fileName string) (*Map, error) {
 	return Decode(file)
 }
 
-func DecodeString(data string) (*Map, error) {
+func DecodeString(data string) (*Osm, error) {
 	return Decode(strings.NewReader(data))
 }
 
 // Decode an reader
-func Decode(reader io.Reader) (*Map, error) {
+func Decode(reader io.Reader) (*Osm, error) {
 	var (
-		o   = new(Map)
+		o   = new(Osm)
 		err error
 	)
 

@@ -1,6 +1,7 @@
 package main
 
 import (
+	// "time"
 	"log"
 	"github.com/go-pg/pg"
 	"math/rand"
@@ -15,11 +16,12 @@ import (
 
 // Struct for geo data from DB
 type Edge struct {
-	Id	int64	`xml:"id"	sql:"id"`
-	Edge2id	int64	`xml:"ref"	sql:"edge2id"`
-	Edge3id	int64	`xml:"ref"	sql:"edge3id"`
-	Edge4id	int64	`xml:"ref"	sql:"edge4id"`
-	Edge5id	int64	`xml:"ref"	sql:"edge5id"`
+	Id	int32	`xml:"id"	sql:"id"`
+	// Edge1id	int32	`xml:"ref"	sql:"edge1id"`
+	Edge2id	int32	`xml:"ref"	sql:"edge2id"`
+	Edge3id	int32	`xml:"ref"	sql:"edge3id"`
+	Edge4id	int32	`xml:"ref"	sql:"edge4id"`
+	Edge5id	int32	`xml:"ref"	sql:"edge5id"`
 	Oneway	string	`xml:"oneway"	sql:"oneway"`
 	Surface	string	`xml:"surface"	sql:"surface"`
 	Highway	string	`xml:"highway"	sql:"highway"`
@@ -39,10 +41,10 @@ func main() {
 	defer db.Close()
 
 	// xmlData — body struct for .xml 
-	var xmlData cfg.Map
+	var xmlData cfg.Osm
 
 	// initiating random ID for nodes
-	generate := rand.New(rand.NewSource(99)).Int63
+	generate := rand.New(rand.NewSource(99)).Int31
 
 	// initiating structs for nodes, ways and relations ID
 	var nodeId cfg.Elem
@@ -65,48 +67,135 @@ func main() {
 
 		node := dbData[i].Geom.Coordinates[0]
 		wayId.ID = dbData[i].Id
+		wayId.Ts = "2019-01-01T00:00:00Z"
+		wayId.Version = 1
 		nodeIDs = nil
 		arrTags = nil
 		arrMember = nil
 		// filling tags array
+		switch dbData[i].Surface {
+		case "0":
+			dbData[i].Surface = "no data"
+		case "1":
+			dbData[i].Surface = "unpaved"
+		case "2":
+			dbData[i].Surface = "asphalt"
+		case "3":
+			dbData[i].Surface = "rails"
+		}
 		arrTags = append(arrTags, 
 			cfg.Tag{
-				Key:	"Highway",
+				Key:	"highway",
 				Value:	dbData[i].Highway,
 			}, 
 			cfg.Tag{
-				Key:	"Oneway",
+				Key:	"oneway",
 				Value:	dbData[i].Oneway,
 			},
 			cfg.Tag{
-				Key:	"Surface",
+				Key:	"surface",
 				Value:	dbData[i].Surface,
 			}	)
 		// filling members array => relations
-		arrMember = append(arrMember, 
-			cfg.Member{
-				Type:	"way",
-				Ref:	dbData[i].Id,
-				Role:	"",
-				},
-			cfg.Member{
-				Type:	"way",
-				Ref:	dbData[i].Edge2id,
-				Role:	"",
-			}	)
-		relId.ID = generate()
-		xmlData.Relations = append(xmlData.Relations, cfg.Relation{
-			Elem:	relId,
-			Members:	arrMember,
-			})
+		if dbData[i].Edge2id > 0 {
+			if dbData[i].Edge5id != 0 {
+				arrMember = append(arrMember, 
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge2id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge3id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge4id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge5id,
+						Role:	"",
+					}	)
+			} else if dbData[i].Edge5id == 0 && dbData[i].Edge4id != 0 {
+				arrMember = append(arrMember, 
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge2id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge3id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge4id,
+						Role:	"",
+					}	)
+			} else if dbData[i].Edge5id == 0 && dbData[i].Edge4id == 0 && dbData[i].Edge3id != 0 {
+				arrMember = append(arrMember, 
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge2id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge3id,
+						Role:	"",
+					}	)
+			} else {
+				arrMember = append(arrMember, 
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Id,
+						Role:	"",
+					},
+					cfg.Member{
+						Type:	"way",
+						Ref:	dbData[i].Edge2id,
+						Role:	"",
+					}	)
+			}
+
+			relId.ID = generate()
+			relId.Ts = "2019-01-01T00:00:00Z"
+			relId.Version = 1
+			xmlData.Relations = append(xmlData.Relations, cfg.Relation{
+				Elem:	relId,
+				Members:	arrMember,
+				})			
+		}
 
 		// iterating every node
 		for y := 0; y < len(node); y++ {
 			nodeId.ID = generate()
+			nodeId.Ts = "2019-01-01T00:00:00Z"
+			nodeId.Version = 1
 			xmlData.Nodes = append(xmlData.Nodes, cfg.Node{
 				Elem:	nodeId,
-				Lat:	node[y][0],
-				Lng:	node[y][1],
+				Lat:	node[y][1],
+				Lng:	node[y][0],
 				Tags:	arrTags,
 				}	)
 			// making array of node ID for ways
@@ -122,14 +211,8 @@ func main() {
 			}	)
 	}
 
-		// Encode to XML
-	// x, _ := xml.MarshalIndent(WayTags(xmlData.Ways[0].Tags), "", "  ")
-	// log.Println(string(x))
-	
-	// log.Println(xmlData)
-	// we unmarshal our byteArray which contains our
-	// xmlFiles content into 'users' which we defined above
-	// xml.Unmarshal(	getSomeData(db), &data	)	
+	xmlData.Version = "0.6"
+	xmlData.Ts = "2019-01-28T01:59:52Z"
 
 	// creating output xml file
 	f, err := os.Create("out.xml")
@@ -137,10 +220,11 @@ func main() {
 	defer f.Close()
 	newFile := io.Writer(f)
 	enc := xml.NewEncoder(newFile)
-	enc.Indent("  ", "    ")
+	f.Write([]byte("<?xml version=\"1\" encoding=\"UTF-8\"?>\n"))
+	enc.Indent("", "    ")
     	if err := enc.Encode(&xmlData); err != nil {
 				log.Printf("error: %v\n", err, "%v\n", enc)
-				// log.Println("map:", xmlData)
+				// log.Println("Osm:", xmlData)
 		}
 }
 
@@ -150,9 +234,10 @@ func getSomeData(db *pg.DB) []Edge {
 	var ret []Edge
 	var err error
 	sqlString := `SELECT "tline".id as id, ST_AsGeoJSON(ST_Transform("tline".geom, 4326)) as geom, oneway, surface, highway, edge2id, edge3id, edge4id, edge5id
-				FROM graph.tline as "tline", graph.gman as "gman" 
-				where "tline".id = "gman".edge1id
-				limit 100`
+				FROM graph.tline as "tline" left join graph.gman as "gman" on "tline".id = "gman".edge1id  
+				--where "tline".id = "gman".edge1id
+				order by id desc
+				limit 1000`
 	_, err = db.Model().Query(&ret, sqlString)
 	if err != nil {
 		log.Println("some shit happend:", "\n", err)		
