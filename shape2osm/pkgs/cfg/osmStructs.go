@@ -88,7 +88,6 @@ type Relation struct {
 	Elem
 	XMLName xml.Name `xml:"relation"`
 	Visible bool     `xml:"visible,attr"`
-	Version string   `xml:"version,attr"`
 	Members []Member `xml:"member"`
 	Tags    []Tag    `xml:"tag"`
 }
