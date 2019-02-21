@@ -22,7 +22,7 @@ type NodedLine struct {
 	F_lanes		string	`xml:"f_lanes"		sql:f_lanes`
 	T_lanes		string	`xml:"t_lanes"		sql:"t_lanes"`
 	GmanTyp 	string 	`xml:"gman_typ"		sql:"gman_typ"`
-	TlineType	string 	`xml:"tline_typ"	sql:"tline_typ"`
+	TlineTyp	string 	`xml:"tline_typ"	sql:"tline_typ"`
 	Speedlim	string	`xml:"speedlim" 	sql:"speedlim"`
 	RdName		string	`xml:"rd_name" 		sql:"rd_name"`
 	Tollway		string 	`xml:"tollway" 		sql:"tollway"`
@@ -137,7 +137,7 @@ func main() {
 		}
 
 		// TYP_COD types
-		switch dbData.NodedLines[i].TlineType {
+		switch dbData.NodedLines[i].TlineTyp {
 		case "7701":
 			dbData.NodedLines[i].SnipAd = "footway"
 		case "7702":
@@ -268,6 +268,7 @@ func main() {
 			})			
 		}
 
+		// filling tags array
 		arrTags = append(arrTags, 
 			cfg.Tag{
 				Key:	"highway",

@@ -8181,6 +8181,7 @@
     <way id="215" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="185"></nd>
         <nd ref="186"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8193,6 +8194,7 @@
     <way id="217" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="186"></nd>
         <nd ref="187"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8205,6 +8207,7 @@
     <way id="218" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="187"></nd>
         <nd ref="188"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8217,6 +8220,7 @@
     <way id="219" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="188"></nd>
         <nd ref="189"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8229,6 +8233,7 @@
     <way id="221" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="189"></nd>
         <nd ref="190"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8241,6 +8246,7 @@
     <way id="222" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="190"></nd>
         <nd ref="191"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8253,6 +8259,7 @@
     <way id="223" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="191"></nd>
         <nd ref="192"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8265,6 +8272,7 @@
     <way id="224" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="192"></nd>
         <nd ref="193"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8277,6 +8285,7 @@
     <way id="225" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="193"></nd>
         <nd ref="194"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8289,6 +8298,7 @@
     <way id="228" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="194"></nd>
         <nd ref="195"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8301,6 +8311,7 @@
     <way id="229" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="195"></nd>
         <nd ref="196"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8313,6 +8324,7 @@
     <way id="230" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="196"></nd>
         <nd ref="197"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8325,6 +8337,7 @@
     <way id="231" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="197"></nd>
         <nd ref="198"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8337,6 +8350,7 @@
     <way id="233" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="198"></nd>
         <nd ref="199"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8349,6 +8363,7 @@
     <way id="234" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="199"></nd>
         <nd ref="200"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8361,6 +8376,7 @@
     <way id="235" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="200"></nd>
         <nd ref="201"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8373,6 +8389,7 @@
     <way id="236" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="201"></nd>
         <nd ref="202"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8385,6 +8402,7 @@
     <way id="237" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="202"></nd>
         <nd ref="203"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8397,6 +8415,7 @@
     <way id="238" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="203"></nd>
         <nd ref="204"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8409,6 +8428,7 @@
     <way id="240" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="204"></nd>
         <nd ref="205"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8421,6 +8441,7 @@
     <way id="244" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="205"></nd>
         <nd ref="206"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8433,6 +8454,7 @@
     <way id="247" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="206"></nd>
         <nd ref="207"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8445,6 +8467,7 @@
     <way id="249" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="207"></nd>
         <nd ref="208"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8457,6 +8480,7 @@
     <way id="250" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="208"></nd>
         <nd ref="209"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8469,6 +8493,7 @@
     <way id="251" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="209"></nd>
         <nd ref="210"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8481,6 +8506,7 @@
     <way id="252" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="210"></nd>
         <nd ref="211"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8493,6 +8519,7 @@
     <way id="253" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="211"></nd>
         <nd ref="212"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8505,6 +8532,7 @@
     <way id="254" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="212"></nd>
         <nd ref="213"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8517,6 +8545,7 @@
     <way id="255" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="213"></nd>
         <nd ref="214"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8529,6 +8558,7 @@
     <way id="256" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="214"></nd>
         <nd ref="215"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8541,6 +8571,7 @@
     <way id="257" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="215"></nd>
         <nd ref="216"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8553,6 +8584,7 @@
     <way id="259" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="216"></nd>
         <nd ref="217"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8565,6 +8597,7 @@
     <way id="260" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="217"></nd>
         <nd ref="218"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8577,6 +8610,7 @@
     <way id="261" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="218"></nd>
         <nd ref="219"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8589,6 +8623,7 @@
     <way id="262" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="219"></nd>
         <nd ref="220"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -8601,6 +8636,7 @@
     <way id="263" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="220"></nd>
         <nd ref="221"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="road"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="9"></tag>
@@ -10161,7 +10197,7 @@
     <way id="417" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="351"></nd>
         <nd ref="352"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10173,7 +10209,7 @@
     <way id="419" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="352"></nd>
         <nd ref="354"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10185,7 +10221,7 @@
     <way id="420" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="354"></nd>
         <nd ref="355"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10197,7 +10233,7 @@
     <way id="421" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="355"></nd>
         <nd ref="356"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10209,7 +10245,7 @@
     <way id="422" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="356"></nd>
         <nd ref="357"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10221,7 +10257,7 @@
     <way id="423" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="357"></nd>
         <nd ref="358"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10233,7 +10269,7 @@
     <way id="424" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="358"></nd>
         <nd ref="359"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10245,6 +10281,7 @@
     <way id="427" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="360"></nd>
         <nd ref="361"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10257,6 +10294,7 @@
     <way id="428" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="361"></nd>
         <nd ref="362"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10269,6 +10307,7 @@
     <way id="430" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="362"></nd>
         <nd ref="363"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10281,6 +10320,7 @@
     <way id="431" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="363"></nd>
         <nd ref="364"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10293,6 +10333,7 @@
     <way id="433" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="364"></nd>
         <nd ref="365"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10305,6 +10346,7 @@
     <way id="434" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="360"></nd>
         <nd ref="366"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10317,6 +10359,7 @@
     <way id="435" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="366"></nd>
         <nd ref="367"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10329,6 +10372,7 @@
     <way id="436" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="367"></nd>
         <nd ref="368"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10341,6 +10385,7 @@
     <way id="437" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="368"></nd>
         <nd ref="369"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10353,6 +10398,7 @@
     <way id="438" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="369"></nd>
         <nd ref="370"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10365,6 +10411,7 @@
     <way id="439" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="370"></nd>
         <nd ref="371"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10377,6 +10424,7 @@
     <way id="441" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="371"></nd>
         <nd ref="372"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10389,6 +10437,7 @@
     <way id="442" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="372"></nd>
         <nd ref="373"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10401,6 +10450,7 @@
     <way id="443" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="373"></nd>
         <nd ref="374"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10413,6 +10463,7 @@
     <way id="445" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="374"></nd>
         <nd ref="375"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10425,6 +10476,7 @@
     <way id="446" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="375"></nd>
         <nd ref="376"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10437,6 +10489,7 @@
     <way id="448" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="376"></nd>
         <nd ref="377"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10449,6 +10502,7 @@
     <way id="449" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="377"></nd>
         <nd ref="378"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10461,6 +10515,7 @@
     <way id="450" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="378"></nd>
         <nd ref="379"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10473,6 +10528,7 @@
     <way id="451" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="379"></nd>
         <nd ref="380"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10485,6 +10541,7 @@
     <way id="452" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="380"></nd>
         <nd ref="381"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10497,6 +10554,7 @@
     <way id="453" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="381"></nd>
         <nd ref="382"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10509,6 +10567,7 @@
     <way id="455" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="382"></nd>
         <nd ref="383"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10521,6 +10580,7 @@
     <way id="456" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="383"></nd>
         <nd ref="384"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10533,6 +10593,7 @@
     <way id="458" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="384"></nd>
         <nd ref="385"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10545,6 +10606,7 @@
     <way id="460" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="385"></nd>
         <nd ref="386"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10557,6 +10619,7 @@
     <way id="461" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="386"></nd>
         <nd ref="387"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10569,6 +10632,7 @@
     <way id="463" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="387"></nd>
         <nd ref="388"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10581,6 +10645,7 @@
     <way id="464" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="388"></nd>
         <nd ref="389"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10593,6 +10658,7 @@
     <way id="465" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="389"></nd>
         <nd ref="390"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10605,6 +10671,7 @@
     <way id="466" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="390"></nd>
         <nd ref="391"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10617,6 +10684,7 @@
     <way id="467" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="391"></nd>
         <nd ref="392"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10629,6 +10697,7 @@
     <way id="468" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="393"></nd>
         <nd ref="394"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10641,6 +10710,7 @@
     <way id="469" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="394"></nd>
         <nd ref="395"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10653,6 +10723,7 @@
     <way id="470" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="395"></nd>
         <nd ref="396"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10665,6 +10736,7 @@
     <way id="471" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="396"></nd>
         <nd ref="387"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10677,6 +10749,7 @@
     <way id="472" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="397"></nd>
         <nd ref="398"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10689,6 +10762,7 @@
     <way id="473" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="398"></nd>
         <nd ref="399"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10701,6 +10775,7 @@
     <way id="474" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="399"></nd>
         <nd ref="400"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10713,6 +10788,7 @@
     <way id="475" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="400"></nd>
         <nd ref="401"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10725,6 +10801,7 @@
     <way id="476" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="401"></nd>
         <nd ref="402"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10737,6 +10814,7 @@
     <way id="477" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="402"></nd>
         <nd ref="403"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10749,6 +10827,7 @@
     <way id="479" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="403"></nd>
         <nd ref="404"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10761,6 +10840,7 @@
     <way id="480" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="404"></nd>
         <nd ref="405"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10773,6 +10853,7 @@
     <way id="481" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="405"></nd>
         <nd ref="406"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10785,6 +10866,7 @@
     <way id="484" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="406"></nd>
         <nd ref="407"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10797,6 +10879,7 @@
     <way id="485" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="407"></nd>
         <nd ref="408"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10809,6 +10892,7 @@
     <way id="486" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="408"></nd>
         <nd ref="409"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10821,6 +10905,7 @@
     <way id="487" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="409"></nd>
         <nd ref="410"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10833,6 +10918,7 @@
     <way id="488" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="410"></nd>
         <nd ref="411"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10845,6 +10931,7 @@
     <way id="489" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="411"></nd>
         <nd ref="360"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10857,6 +10944,7 @@
     <way id="491" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="412"></nd>
         <nd ref="413"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10869,6 +10957,7 @@
     <way id="493" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="413"></nd>
         <nd ref="414"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10881,6 +10970,7 @@
     <way id="494" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="414"></nd>
         <nd ref="397"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -10893,7 +10983,7 @@
     <way id="495" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="415"></nd>
         <nd ref="416"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10905,7 +10995,7 @@
     <way id="497" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="416"></nd>
         <nd ref="353"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -10917,7 +11007,7 @@
     <way id="499" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="353"></nd>
         <nd ref="417"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -11841,6 +11931,7 @@
     <way id="593" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="492"></nd>
         <nd ref="493"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11853,6 +11944,7 @@
     <way id="594" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="493"></nd>
         <nd ref="494"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11865,6 +11957,7 @@
     <way id="595" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="494"></nd>
         <nd ref="495"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11877,6 +11970,7 @@
     <way id="596" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="495"></nd>
         <nd ref="496"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11889,6 +11983,7 @@
     <way id="597" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="497"></nd>
         <nd ref="498"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11901,6 +11996,7 @@
     <way id="598" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="498"></nd>
         <nd ref="499"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11913,6 +12009,7 @@
     <way id="600" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="499"></nd>
         <nd ref="500"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11925,6 +12022,7 @@
     <way id="601" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="500"></nd>
         <nd ref="501"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11937,6 +12035,7 @@
     <way id="602" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="501"></nd>
         <nd ref="502"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11949,6 +12048,7 @@
     <way id="603" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="502"></nd>
         <nd ref="503"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11961,6 +12061,7 @@
     <way id="604" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="503"></nd>
         <nd ref="504"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -11973,6 +12074,7 @@
     <way id="605" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="504"></nd>
         <nd ref="505"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -12021,6 +12123,7 @@
     <way id="611" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="505"></nd>
         <nd ref="511"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -12033,6 +12136,7 @@
     <way id="612" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="511"></nd>
         <nd ref="512"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -12045,6 +12149,7 @@
     <way id="613" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="512"></nd>
         <nd ref="513"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -12057,6 +12162,7 @@
     <way id="614" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="514"></nd>
         <nd ref="515"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -12069,6 +12175,7 @@
     <way id="615" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="515"></nd>
         <nd ref="505"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -13389,6 +13496,7 @@
     <way id="752" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="621"></nd>
         <nd ref="622"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -13401,6 +13509,7 @@
     <way id="754" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="622"></nd>
         <nd ref="623"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -13413,6 +13522,7 @@
     <way id="755" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="623"></nd>
         <nd ref="624"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -13425,6 +13535,7 @@
     <way id="756" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="624"></nd>
         <nd ref="625"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -13437,6 +13548,7 @@
     <way id="757" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="625"></nd>
         <nd ref="626"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -19794,6 +19906,7 @@
     <way id="1393" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1140"></nd>
         <nd ref="1141"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -19806,6 +19919,7 @@
     <way id="1395" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1114"></nd>
         <nd ref="1142"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -19818,6 +19932,7 @@
     <way id="1396" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1142"></nd>
         <nd ref="1140"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -21578,6 +21693,7 @@
     <way id="1586" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1263"></nd>
         <nd ref="1264"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -21590,6 +21706,7 @@
     <way id="1587" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1264"></nd>
         <nd ref="1265"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -21602,6 +21719,7 @@
     <way id="1588" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1265"></nd>
         <nd ref="1266"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -21614,6 +21732,7 @@
     <way id="1589" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1266"></nd>
         <nd ref="1267"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -22922,6 +23041,7 @@
     <way id="1732" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1360"></nd>
         <nd ref="1361"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -22934,6 +23054,7 @@
     <way id="1733" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1361"></nd>
         <nd ref="1289"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -26439,7 +26560,7 @@
     <way id="2080" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1638"></nd>
         <nd ref="1639"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26451,7 +26572,7 @@
     <way id="2081" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1639"></nd>
         <nd ref="1640"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26463,7 +26584,7 @@
     <way id="2083" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1640"></nd>
         <nd ref="1641"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26475,7 +26596,7 @@
     <way id="2085" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1641"></nd>
         <nd ref="1625"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26487,7 +26608,7 @@
     <way id="2086" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1642"></nd>
         <nd ref="1643"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26499,7 +26620,7 @@
     <way id="2088" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1643"></nd>
         <nd ref="1644"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26511,7 +26632,7 @@
     <way id="2089" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1644"></nd>
         <nd ref="1645"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26523,7 +26644,7 @@
     <way id="2090" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1645"></nd>
         <nd ref="1637"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26535,7 +26656,7 @@
     <way id="2092" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1646"></nd>
         <nd ref="1647"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26547,7 +26668,7 @@
     <way id="2093" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1647"></nd>
         <nd ref="1648"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -26559,7 +26680,7 @@
     <way id="2095" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1648"></nd>
         <nd ref="1649"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27387,7 +27508,7 @@
     <way id="2179" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="365"></nd>
         <nd ref="1723"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27399,7 +27520,7 @@
     <way id="2180" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1723"></nd>
         <nd ref="1724"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27411,6 +27532,7 @@
     <way id="2182" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="373"></nd>
         <nd ref="351"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -27423,7 +27545,7 @@
     <way id="2184" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="392"></nd>
         <nd ref="1725"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27435,7 +27557,7 @@
     <way id="2185" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1725"></nd>
         <nd ref="1726"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27447,7 +27569,7 @@
     <way id="2187" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1726"></nd>
         <nd ref="1650"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27459,7 +27581,7 @@
     <way id="2188" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1655"></nd>
         <nd ref="1727"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27471,7 +27593,7 @@
     <way id="2190" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1727"></nd>
         <nd ref="1728"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27483,7 +27605,7 @@
     <way id="2191" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1728"></nd>
         <nd ref="1729"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27495,7 +27617,7 @@
     <way id="2193" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1729"></nd>
         <nd ref="1730"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -27507,7 +27629,7 @@
     <way id="2194" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="1730"></nd>
         <nd ref="393"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -31758,6 +31880,7 @@
         <nd ref="2061"></nd>
         <nd ref="2062"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -31771,6 +31894,7 @@
         <nd ref="2062"></nd>
         <nd ref="2063"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -31784,6 +31908,7 @@
         <nd ref="2063"></nd>
         <nd ref="2064"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -31797,6 +31922,7 @@
         <nd ref="2065"></nd>
         <nd ref="2066"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -31810,6 +31936,7 @@
         <nd ref="2066"></nd>
         <nd ref="2067"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -31823,6 +31950,7 @@
         <nd ref="2067"></nd>
         <nd ref="2061"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32122,6 +32250,7 @@
         <nd ref="2089"></nd>
         <nd ref="2090"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32135,6 +32264,7 @@
         <nd ref="2090"></nd>
         <nd ref="2091"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32148,6 +32278,7 @@
         <nd ref="2091"></nd>
         <nd ref="2092"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32161,6 +32292,7 @@
         <nd ref="2092"></nd>
         <nd ref="2093"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32174,6 +32306,7 @@
         <nd ref="2093"></nd>
         <nd ref="2094"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32187,6 +32320,7 @@
         <nd ref="2094"></nd>
         <nd ref="2095"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32200,6 +32334,7 @@
         <nd ref="2095"></nd>
         <nd ref="2096"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32213,6 +32348,7 @@
         <nd ref="2096"></nd>
         <nd ref="2097"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32226,6 +32362,7 @@
         <nd ref="2097"></nd>
         <nd ref="2098"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32239,6 +32376,7 @@
         <nd ref="2098"></nd>
         <nd ref="171"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32252,6 +32390,7 @@
         <nd ref="171"></nd>
         <nd ref="2099"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32265,6 +32404,7 @@
         <nd ref="2099"></nd>
         <nd ref="2100"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32278,6 +32418,7 @@
         <nd ref="2100"></nd>
         <nd ref="2101"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -32290,7 +32431,7 @@
     <way id="2698" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2102"></nd>
         <nd ref="2103"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32302,7 +32443,7 @@
     <way id="2700" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2103"></nd>
         <nd ref="2104"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32314,7 +32455,7 @@
     <way id="2702" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2104"></nd>
         <nd ref="2105"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32326,7 +32467,7 @@
     <way id="2703" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2105"></nd>
         <nd ref="412"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32338,6 +32479,7 @@
     <way id="2704" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="397"></nd>
         <nd ref="2106"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -32350,6 +32492,7 @@
     <way id="2706" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2106"></nd>
         <nd ref="415"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -32470,7 +32613,7 @@
     <way id="2717" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="513"></nd>
         <nd ref="2116"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32482,7 +32625,7 @@
     <way id="2718" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2116"></nd>
         <nd ref="2117"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32494,7 +32637,7 @@
     <way id="2719" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2117"></nd>
         <nd ref="2118"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32506,7 +32649,7 @@
     <way id="2721" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2118"></nd>
         <nd ref="2119"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32518,7 +32661,7 @@
     <way id="2722" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2119"></nd>
         <nd ref="508"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32530,7 +32673,7 @@
     <way id="2723" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="506"></nd>
         <nd ref="2120"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32542,7 +32685,7 @@
     <way id="2724" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2120"></nd>
         <nd ref="2121"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32554,7 +32697,7 @@
     <way id="2725" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2121"></nd>
         <nd ref="2122"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32566,7 +32709,7 @@
     <way id="2726" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2122"></nd>
         <nd ref="2123"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -32578,7 +32721,7 @@
     <way id="2727" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2123"></nd>
         <nd ref="514"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -34172,7 +34315,7 @@
     <way id="2898" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2257"></nd>
         <nd ref="2258"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -34184,7 +34327,7 @@
     <way id="2899" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2258"></nd>
         <nd ref="2259"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -34196,7 +34339,7 @@
     <way id="2900" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2259"></nd>
         <nd ref="492"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36596,7 +36739,7 @@
     <way id="3121" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2465"></nd>
         <nd ref="2466"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36608,7 +36751,7 @@
     <way id="3122" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2466"></nd>
         <nd ref="2467"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36620,7 +36763,7 @@
     <way id="3123" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2467"></nd>
         <nd ref="2468"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36632,7 +36775,7 @@
     <way id="3124" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2468"></nd>
         <nd ref="2469"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36644,7 +36787,7 @@
     <way id="3125" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2469"></nd>
         <nd ref="2470"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36656,7 +36799,7 @@
     <way id="3126" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2470"></nd>
         <nd ref="2471"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36668,7 +36811,7 @@
     <way id="3127" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2471"></nd>
         <nd ref="2472"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36680,7 +36823,7 @@
     <way id="3128" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2473"></nd>
         <nd ref="2474"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36692,7 +36835,7 @@
     <way id="3129" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2474"></nd>
         <nd ref="2475"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -36704,7 +36847,7 @@
     <way id="3130" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2475"></nd>
         <nd ref="2476"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -70976,7 +71119,7 @@
     <way id="6620" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="4239"></nd>
         <nd ref="5159"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -70988,7 +71131,7 @@
     <way id="6621" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5159"></nd>
         <nd ref="5160"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -71000,7 +71143,7 @@
     <way id="6622" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5160"></nd>
         <nd ref="1275"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -71012,7 +71155,7 @@
     <way id="6623" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="2809"></nd>
         <nd ref="5161"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -71024,7 +71167,7 @@
     <way id="6624" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5161"></nd>
         <nd ref="5162"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -71036,7 +71179,7 @@
     <way id="6625" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5162"></nd>
         <nd ref="5163"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -71048,7 +71191,7 @@
     <way id="6627" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5163"></nd>
         <nd ref="5164"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -71060,7 +71203,7 @@
     <way id="6628" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5164"></nd>
         <nd ref="5165"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -71072,7 +71215,7 @@
     <way id="6629" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5165"></nd>
         <nd ref="497"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76103,6 +76246,7 @@
     <way id="7167" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5541"></nd>
         <nd ref="5542"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -76115,6 +76259,7 @@
     <way id="7168" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5542"></nd>
         <nd ref="5543"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -76127,6 +76272,7 @@
     <way id="7169" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5543"></nd>
         <nd ref="5544"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -76163,6 +76309,7 @@
     <way id="7173" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5345"></nd>
         <nd ref="5547"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -76175,6 +76322,7 @@
     <way id="7174" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5547"></nd>
         <nd ref="5548"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -76187,7 +76335,7 @@
     <way id="7175" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="4493"></nd>
         <nd ref="5549"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76199,7 +76347,7 @@
     <way id="7176" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5549"></nd>
         <nd ref="5550"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76211,7 +76359,7 @@
     <way id="7177" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5550"></nd>
         <nd ref="5551"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76223,7 +76371,7 @@
     <way id="7178" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5551"></nd>
         <nd ref="5552"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76235,7 +76383,7 @@
     <way id="7179" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5552"></nd>
         <nd ref="5553"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76247,7 +76395,7 @@
     <way id="7180" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5553"></nd>
         <nd ref="5554"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76259,7 +76407,7 @@
     <way id="7181" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5554"></nd>
         <nd ref="5555"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76271,7 +76419,7 @@
     <way id="7182" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5555"></nd>
         <nd ref="5556"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76283,7 +76431,7 @@
     <way id="7183" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5556"></nd>
         <nd ref="5557"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76295,7 +76443,7 @@
     <way id="7184" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5557"></nd>
         <nd ref="5558"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76307,7 +76455,7 @@
     <way id="7185" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5558"></nd>
         <nd ref="5559"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76319,7 +76467,7 @@
     <way id="7186" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5559"></nd>
         <nd ref="5560"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76331,7 +76479,7 @@
     <way id="7187" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5560"></nd>
         <nd ref="5548"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -76343,6 +76491,7 @@
     <way id="7188" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="387"></nd>
         <nd ref="5561"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76355,6 +76504,7 @@
     <way id="7189" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5561"></nd>
         <nd ref="5562"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76367,6 +76517,7 @@
     <way id="7190" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5562"></nd>
         <nd ref="5563"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76379,6 +76530,7 @@
     <way id="7191" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5563"></nd>
         <nd ref="5564"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76391,6 +76543,7 @@
     <way id="7192" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5564"></nd>
         <nd ref="5565"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76403,6 +76556,7 @@
     <way id="7194" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5565"></nd>
         <nd ref="5566"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76415,6 +76569,7 @@
     <way id="7195" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5566"></nd>
         <nd ref="5567"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76427,6 +76582,7 @@
     <way id="7196" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5567"></nd>
         <nd ref="5568"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76439,6 +76595,7 @@
     <way id="7198" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5568"></nd>
         <nd ref="5569"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76451,6 +76608,7 @@
     <way id="7199" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5569"></nd>
         <nd ref="5570"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76463,6 +76621,7 @@
     <way id="7200" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5570"></nd>
         <nd ref="5571"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76475,6 +76634,7 @@
     <way id="7201" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5571"></nd>
         <nd ref="5572"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76487,6 +76647,7 @@
     <way id="7202" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5572"></nd>
         <nd ref="5573"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76499,6 +76660,7 @@
     <way id="7203" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5573"></nd>
         <nd ref="5574"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76511,6 +76673,7 @@
     <way id="7204" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5574"></nd>
         <nd ref="5575"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76523,6 +76686,7 @@
     <way id="7205" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5575"></nd>
         <nd ref="5576"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76535,6 +76699,7 @@
     <way id="7206" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5576"></nd>
         <nd ref="5577"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -76679,6 +76844,7 @@
     <way id="7222" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5577"></nd>
         <nd ref="5587"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -76691,6 +76857,7 @@
     <way id="7223" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5587"></nd>
         <nd ref="5260"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -76704,6 +76871,7 @@
         <nd ref="2101"></nd>
         <nd ref="5588"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76717,6 +76885,7 @@
         <nd ref="5588"></nd>
         <nd ref="5589"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76730,6 +76899,7 @@
         <nd ref="5589"></nd>
         <nd ref="5590"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76743,6 +76913,7 @@
         <nd ref="5590"></nd>
         <nd ref="5591"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76756,6 +76927,7 @@
         <nd ref="5591"></nd>
         <nd ref="5592"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76769,6 +76941,7 @@
         <nd ref="5592"></nd>
         <nd ref="5593"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76782,6 +76955,7 @@
         <nd ref="5593"></nd>
         <nd ref="5594"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76795,6 +76969,7 @@
         <nd ref="5594"></nd>
         <nd ref="5595"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76808,6 +76983,7 @@
         <nd ref="5595"></nd>
         <nd ref="5596"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76821,6 +76997,7 @@
         <nd ref="5596"></nd>
         <nd ref="5597"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76834,6 +77011,7 @@
         <nd ref="5597"></nd>
         <nd ref="5598"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76847,6 +77025,7 @@
         <nd ref="5598"></nd>
         <nd ref="5599"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76860,6 +77039,7 @@
         <nd ref="5599"></nd>
         <nd ref="5600"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76873,6 +77053,7 @@
         <nd ref="5600"></nd>
         <nd ref="5601"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76886,6 +77067,7 @@
         <nd ref="5601"></nd>
         <nd ref="5602"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76899,6 +77081,7 @@
         <nd ref="5602"></nd>
         <nd ref="5603"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76912,6 +77095,7 @@
         <nd ref="5603"></nd>
         <nd ref="5604"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76925,6 +77109,7 @@
         <nd ref="5604"></nd>
         <nd ref="5605"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -76938,6 +77123,7 @@
         <nd ref="5605"></nd>
         <nd ref="2022"></nd>
         <tag k="railway" v="rail"></tag>
+        <tag k="bridge" v="yes"></tag>
         <tag k="highway" v="*"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="rails"></tag>
@@ -77238,6 +77424,7 @@
     <way id="7279" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5630"></nd>
         <nd ref="5631"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77250,6 +77437,7 @@
     <way id="7280" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5631"></nd>
         <nd ref="5632"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77262,6 +77450,7 @@
     <way id="7281" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5632"></nd>
         <nd ref="5633"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77274,6 +77463,7 @@
     <way id="7282" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5633"></nd>
         <nd ref="5634"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77286,6 +77476,7 @@
     <way id="7283" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5634"></nd>
         <nd ref="5635"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77298,6 +77489,7 @@
     <way id="7284" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5635"></nd>
         <nd ref="5636"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77310,6 +77502,7 @@
     <way id="7285" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5636"></nd>
         <nd ref="5637"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77322,6 +77515,7 @@
     <way id="7286" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5637"></nd>
         <nd ref="5638"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77334,6 +77528,7 @@
     <way id="7288" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5638"></nd>
         <nd ref="5639"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77346,6 +77541,7 @@
     <way id="7290" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5639"></nd>
         <nd ref="5640"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77358,6 +77554,7 @@
     <way id="7291" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5640"></nd>
         <nd ref="5641"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77370,6 +77567,7 @@
     <way id="7292" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5641"></nd>
         <nd ref="5642"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77382,6 +77580,7 @@
     <way id="7293" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5642"></nd>
         <nd ref="5643"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77394,6 +77593,7 @@
     <way id="7294" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5643"></nd>
         <nd ref="5644"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77406,6 +77606,7 @@
     <way id="7295" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5644"></nd>
         <nd ref="5645"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77418,6 +77619,7 @@
     <way id="7297" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5645"></nd>
         <nd ref="5646"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77430,6 +77632,7 @@
     <way id="7298" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5646"></nd>
         <nd ref="5647"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77442,6 +77645,7 @@
     <way id="7299" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5647"></nd>
         <nd ref="5648"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -77454,6 +77658,7 @@
     <way id="7300" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5648"></nd>
         <nd ref="5577"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="6"></tag>
@@ -79666,7 +79871,7 @@
     <way id="7534" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5796"></nd>
         <nd ref="5797"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -79919,7 +80124,7 @@
     <way id="7555" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5544"></nd>
         <nd ref="5546"></nd>
-        <tag k="highway" v="footway"></tag>
+        <tag k="highway" v="steps"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
         <tag k="lanes:forward" v="0"></tag>
@@ -79931,6 +80136,7 @@
     <way id="7556" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="5548"></nd>
         <nd ref="5541"></nd>
+        <tag k="tunnel" v="yes"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="6"></tag>
@@ -79943,6 +80149,7 @@
     <way id="7557" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="3862"></nd>
         <nd ref="1360"></nd>
+        <tag k="footway" v="crossing"></tag>
         <tag k="highway" v="footway"></tag>
         <tag k="oneway" v="0"></tag>
         <tag k="surface" v="asphalt"></tag>
