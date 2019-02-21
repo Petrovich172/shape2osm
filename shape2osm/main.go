@@ -28,6 +28,12 @@ type NodedLine struct {
 	Tollway		string 	`xml:"tollway" 		sql:"tollway"`
 	SnipAd 		string 	`xml:"snip_ad"		sql:"snip_ad"`
 	Btf 		string 	`xml:"btf"			sql:"btf"`
+	RWeight 	string 	`xml:"r_weight"		sql:"r_weight"`
+	RHeight 	string 	`xml:"r_height"		sql:"r_height"`
+	RWidth 		string 	`xml:"r_width"		sql:"r_width"`
+	Bicyclanes 	string 	`xml:"bicyclanes"	sql:"bicyclanes"`
+	TBuslanes 	string 	`xml:"t_buslanes"	sql:"t_buslanes"`
+	FBuslanes 	string 	`xml:"f_buslanes"	sql:"f_buslanes"`
 	// Edge1id		int32	`xml:"ref"			sql:"edge1id"`
 	Edge2id		int32	`xml:"ref"			sql:"edge2id"`
 	Edge3id		int32	`xml:"ref"			sql:"edge3id"`
@@ -265,9 +271,41 @@ func main() {
 			cfg.Tag{
 				Key:	"conveying",
 				Value:	"yes",
-			})			
+			})		
 		}
 
+		// bicycle road types
+		switch dbData.NodedLines[i].Bicyclanes {
+		case "1":
+			arrTags = append(arrTags, 
+				cfg.Tag{
+					Key:	"cycleway",
+					Value:	"lane",
+				})
+		case "2":
+			arrTags = append(arrTags, 
+				cfg.Tag{
+					Key:	"cycleway",
+					Value:	"opposite_lane",
+				})
+		case "3":
+			dbData.NodedLines[i].SnipAd = "cycleway"
+		}
+
+		// bus way types
+		if dbData.NodedLines[i].FBuslanes == "1" {
+			arrTags = append(arrTags, 
+				cfg.Tag{
+					Key:	"busway:right",
+					Value:	"lane",
+				})
+		} else if dbData.NodedLines[i].TBuslanes == "1" {
+			arrTags = append(arrTags, 
+				cfg.Tag{
+					Key:	"busway:left",
+					Value:	"lane",
+				})
+		}
 		// filling tags array
 		arrTags = append(arrTags, 
 			cfg.Tag{
@@ -294,6 +332,18 @@ func main() {
 				Key:	"maxspeed",
 				Value:	dbData.NodedLines[i].Speedlim,
 			},
+			cfg.Tag{
+				Key:	"maxweight",
+				Value:	dbData.NodedLines[i].RWeight,
+			},
+			cfg.Tag{
+				Key:	"maxheight",
+				Value:	dbData.NodedLines[i].RHeight,
+			},
+			cfg.Tag{
+				Key:	"maxwidth",
+				Value:	dbData.NodedLines[i].RWidth,
+			},			
 			cfg.Tag{
 				Key:	"name",
 				Value:	dbData.NodedLines[i].RdName,
@@ -456,7 +506,9 @@ func getSomeData(db *pg.DB) DbGeom {
 	var ret DbGeom
 	var err error
 	sqlString1 := `select id, st_asgeojson(the_geom) as geom from graph.tline_2_noded_vertices_pgr`
-	sqlString2 := `SELECT btf, snip_ad, tollway, rd_name, speedlim, f_lanes, t_lanes, "tline_old".typ_cod as tline_typ, "gman".typ_cod as gman_typ, "tline".id as id, "source", target, oneway, surface, highway, edge2id, edge3id, edge4id, edge5id
+	sqlString2 := `SELECT bicyclanes, t_buslanes, f_buslanes, "tline_old".r_weight as r_weight, "tline_old".r_height as r_height, "tline_old".r_width as r_width, 
+					btf, snip_ad, tollway, rd_name, speedlim, f_lanes, t_lanes, "tline_old".typ_cod as tline_typ, "gman".typ_cod as gman_typ, "tline".id as id, 
+					"source", target, oneway, surface, highway, edge2id, edge3id, edge4id, edge5id
 					from graph.tline_2_noded as "tline"
 						join graph.tline as "tline_old" on "tline_old".id = "tline".old_id
 						left join graph.gman as "gman" on "tline".old_id = "gman".edge1id
