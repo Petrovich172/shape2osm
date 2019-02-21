@@ -2,6 +2,7 @@ package main
 
 import (
 	// "time"
+	"strconv"
 	"log"
 	"github.com/go-pg/pg"
 	"math/rand"
@@ -306,6 +307,32 @@ func main() {
 					Value:	"lane",
 				})
 		}
+
+		// size restrictions
+		rWeight, err := strconv.Atoi(dbData.NodedLines[i].RWeight)
+			if err != nil {
+				log.Println(err)
+			}
+		if rWeight >= 2 {
+			arrTags = append(arrTags,
+				cfg.Tag{
+					Key:	"maxweight",
+					Value:	dbData.NodedLines[i].RWeight,
+					})
+		} else if dbData.NodedLines[i].RHeight != "0" {
+			arrTags = append(arrTags,
+				cfg.Tag{
+					Key:	"maxheight",
+					Value:	dbData.NodedLines[i].RHeight,
+					})
+		} else if dbData.NodedLines[i].RWidth != "0" {
+			arrTags = append(arrTags,
+				cfg.Tag{
+					Key:	"maxwidth",
+					Value:	dbData.NodedLines[i].RWidth,
+				})
+		}
+
 		// filling tags array
 		arrTags = append(arrTags, 
 			cfg.Tag{
@@ -332,18 +359,6 @@ func main() {
 				Key:	"maxspeed",
 				Value:	dbData.NodedLines[i].Speedlim,
 			},
-			cfg.Tag{
-				Key:	"maxweight",
-				Value:	dbData.NodedLines[i].RWeight,
-			},
-			cfg.Tag{
-				Key:	"maxheight",
-				Value:	dbData.NodedLines[i].RHeight,
-			},
-			cfg.Tag{
-				Key:	"maxwidth",
-				Value:	dbData.NodedLines[i].RWidth,
-			},			
 			cfg.Tag{
 				Key:	"name",
 				Value:	dbData.NodedLines[i].RdName,
@@ -512,8 +527,7 @@ func getSomeData(db *pg.DB) DbGeom {
 					from graph.tline_2_noded as "tline"
 						join graph.tline as "tline_old" on "tline_old".id = "tline".old_id
 						left join graph.gman as "gman" on "tline".old_id = "gman".edge1id
-									--where "gman".edge2id >= 0 and
-									where st_isempty(the_geom) is false and "source" <> target
+							where st_isempty(the_geom) is false and "source" <> target
 									`
 	_, err = db.Model().Query(&ret.Edges, sqlString1)
 	if err != nil {
