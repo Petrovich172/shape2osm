@@ -2,12 +2,11 @@ package cfg
 
 import (
 	"encoding/xml"
-	"io"
-	"os"
-	"strings"
+	"../utils"
 	// "time"
 )
 
+// OSM FORMAT STRUCTS
 // Osm body struct
 type Osm struct {
 	XMLName xml.Name `xml:"osm"`
@@ -93,73 +92,45 @@ type Relation struct {
 }
 
 
-
-// DecodeFile an Osm file
-func DecodeFile(fileName string) (*Osm, error) {
-
-	file, err := os.Open(fileName)
-	if err != nil {
-		return nil, err
-	}
-	defer file.Close()
-
-	return Decode(file)
+// SHAPED FORMAT STRUCTS
+// Shaped body struct
+type ShapeData struct {
+	Edges	[]Edge
+	NodedLines	[]NodedLine
 }
 
-func DecodeString(data string) (*Osm, error) {
-	return Decode(strings.NewReader(data))
+// Way basic information
+type NodedLine struct {
+	Id			int32	`xml:"id"			sql:"id"`
+	Source		int32	`xml:"source"		sql:"source"`
+	Target		int32	`xml:"target"		sql:"target"`
+	F_lanes		string	`xml:"f_lanes"		sql:f_lanes`
+	T_lanes		string	`xml:"t_lanes"		sql:"t_lanes"`
+	GmanTyp 	string 	`xml:"gman_typ"		sql:"gman_typ"`
+	TlineTyp	string 	`xml:"tline_typ"	sql:"tline_typ"`
+	Speedlim	string	`xml:"speedlim" 	sql:"speedlim"`
+	RdName		string	`xml:"rd_name" 		sql:"rd_name"`
+	Tollway		string 	`xml:"tollway" 		sql:"tollway"`
+	SnipAd 		string 	`xml:"snip_ad"		sql:"snip_ad"`
+	Btf 		string 	`xml:"btf"			sql:"btf"`
+	RWeight 	string 	`xml:"r_weight"		sql:"r_weight"`
+	RHeight 	string 	`xml:"r_height"		sql:"r_height"`
+	RWidth 		string 	`xml:"r_width"		sql:"r_width"`
+	Bicyclanes 	string 	`xml:"bicyclanes"	sql:"bicyclanes"`
+	TBuslanes 	string 	`xml:"t_buslanes"	sql:"t_buslanes"`
+	FBuslanes 	string 	`xml:"f_buslanes"	sql:"f_buslanes"`
+	// Edge1id		int32	`xml:"ref"			sql:"edge1id"`
+	Edge2id		int32	`xml:"ref"			sql:"edge2id"`
+	Edge3id		int32	`xml:"ref"			sql:"edge3id"`
+	Edge4id		int32	`xml:"ref"			sql:"edge4id"`
+	Edge5id		int32	`xml:"ref"			sql:"edge5id"`
+	Oneway		string	`xml:"oneway"		sql:"oneway"`
+	Surface		string	`xml:"surface"		sql:"surface"`
+	Highway		string	`xml:"highway"		sql:"highway"`
 }
 
-// Decode an reader
-func Decode(reader io.Reader) (*Osm, error) {
-	var (
-		o   = new(Osm)
-		err error
-	)
-
-	decoder := xml.NewDecoder(reader)
-	for {
-		token, _ := decoder.Token()
-		if token == nil {
-			break
-		}
-
-		switch typedToken := token.(type) {
-		case xml.StartElement:
-			switch typedToken.Name.Local {
-			case "bounds":
-				var b Bounds
-				err = decoder.DecodeElement(&b, &typedToken)
-				if err != nil {
-					return nil, err
-				}
-				o.Bounds = b
-
-			case "node":
-				var n Node
-				err = decoder.DecodeElement(&n, &typedToken)
-				if err != nil {
-					return nil, err
-				}
-				o.Nodes = append(o.Nodes, n)
-
-			case "way":
-				var w Way
-				err = decoder.DecodeElement(&w, &typedToken)
-				if err != nil {
-					return nil, err
-				}
-				o.Ways = append(o.Ways, w)
-
-			case "relation":
-				var r Relation
-				err = decoder.DecodeElement(&r, &typedToken)
-				if err != nil {
-					return nil, err
-				}
-				o.Relations = append(o.Relations, r)
-			}
-		}
-	}
-	return o, nil
+// Points cutted out from line geometry using pgr_createTopology
+type Edge struct {
+	Id	int32	`xml:"id"	sql:"id"`
+	Geom	utils.PointString	`xml:"geom"	sql:"geom"`	
 }

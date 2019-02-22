@@ -11,49 +11,8 @@ import (
 	"io"
 	"os"
 	"encoding/xml"
-	utils "./pkgs/utils"
 	"./pkgs/cfg"
 )
-
-// Struct for geo data from DB
-type NodedLine struct {
-	Id			int32	`xml:"id"			sql:"id"`
-	Source		int32	`xml:"source"		sql:"source"`
-	Target		int32	`xml:"target"		sql:"target"`
-	F_lanes		string	`xml:"f_lanes"		sql:f_lanes`
-	T_lanes		string	`xml:"t_lanes"		sql:"t_lanes"`
-	GmanTyp 	string 	`xml:"gman_typ"		sql:"gman_typ"`
-	TlineTyp	string 	`xml:"tline_typ"	sql:"tline_typ"`
-	Speedlim	string	`xml:"speedlim" 	sql:"speedlim"`
-	RdName		string	`xml:"rd_name" 		sql:"rd_name"`
-	Tollway		string 	`xml:"tollway" 		sql:"tollway"`
-	SnipAd 		string 	`xml:"snip_ad"		sql:"snip_ad"`
-	Btf 		string 	`xml:"btf"			sql:"btf"`
-	RWeight 	string 	`xml:"r_weight"		sql:"r_weight"`
-	RHeight 	string 	`xml:"r_height"		sql:"r_height"`
-	RWidth 		string 	`xml:"r_width"		sql:"r_width"`
-	Bicyclanes 	string 	`xml:"bicyclanes"	sql:"bicyclanes"`
-	TBuslanes 	string 	`xml:"t_buslanes"	sql:"t_buslanes"`
-	FBuslanes 	string 	`xml:"f_buslanes"	sql:"f_buslanes"`
-	// Edge1id		int32	`xml:"ref"			sql:"edge1id"`
-	Edge2id		int32	`xml:"ref"			sql:"edge2id"`
-	Edge3id		int32	`xml:"ref"			sql:"edge3id"`
-	Edge4id		int32	`xml:"ref"			sql:"edge4id"`
-	Edge5id		int32	`xml:"ref"			sql:"edge5id"`
-	Oneway		string	`xml:"oneway"		sql:"oneway"`
-	Surface		string	`xml:"surface"		sql:"surface"`
-	Highway		string	`xml:"highway"		sql:"highway"`
-}
-
-type Edge struct {
-	Id	int32	`xml:"id"	sql:"id"`
-	Geom	utils.PointString	`xml:"geom"	sql:"geom"`	
-}
-
-type DbGeom struct {
-	Edges	[]Edge
-	NodedLines	[]NodedLine
-}
 
 
 func main() {
@@ -67,30 +26,29 @@ func main() {
 		})
 	defer db.Close()
 
-	// xmlData — body struct for .xml 
+	// Initiating xmlData — body struct for .xml 
 	var xmlData cfg.Osm
 
-	// initiating random ID for nodes
+	// Initiating random ID for nodes
 	generate := rand.New(rand.NewSource(99)).Int31
 
-	// initiating structs for nodes, ways and relations ID
+	// Initiating structs for nodes, ways and relations elements
 	var nodeId cfg.Elem
 	var wayId cfg.Elem
 	var relId cfg.Elem
 
-	// node Id array in Ways struct
-	// var TempNodeId cfg.NdId
+	// Node Id array in Ways struct
 	var nodeIDs []cfg.NdId
 
-	// tags and members array
+	// Tags and members array
 	var arrTags []cfg.Tag
 	var arrMember []cfg.Member
 	var restrictionsArr []cfg.Tag
 
-	// querying geo from DB
+	// Querying geo from DB
 	dbData := getSomeData(db)
 
-	// iterating every node
+	// Iterating every node
 	for i := 0; i < len(dbData.Edges); i++ {
 			nodeId.ID = dbData.Edges[i].Id
 			nodeId.Ts = "2019-01-01T00:00:00Z"
@@ -103,7 +61,7 @@ func main() {
 				}	)
 	}
 	
-	// iteration every noded line (way)
+	// Iterating every noded line (way)
 	for i := 0; i < len(dbData.NodedLines); i++ {
 		wayId.ID = dbData.NodedLines[i].Id
 		wayId.Ts = "2019-01-01T00:00:00Z"
@@ -111,7 +69,6 @@ func main() {
 		nodeIDs = nil
 		arrTags = nil
 		arrMember = nil
-		// filling tags array
 
 		// Surface types
 		switch dbData.NodedLines[i].Surface {
@@ -125,7 +82,7 @@ func main() {
 			dbData.NodedLines[i].Surface = "rails"
 		}
 
-		// road types
+		// Road types
 		switch dbData.NodedLines[i].SnipAd {
 		case "0":
 			dbData.NodedLines[i].SnipAd = "road"
@@ -204,7 +161,7 @@ func main() {
 			})
 		}
 
-		// construction types
+		// Construction types
 		switch dbData.NodedLines[i].Btf {
 		case "1":
 			arrTags = append(arrTags, 
@@ -275,7 +232,7 @@ func main() {
 			})		
 		}
 
-		// bicycle road types
+		// Bicycle road types
 		switch dbData.NodedLines[i].Bicyclanes {
 		case "1":
 			arrTags = append(arrTags, 
@@ -293,7 +250,7 @@ func main() {
 			dbData.NodedLines[i].SnipAd = "cycleway"
 		}
 
-		// bus way types
+		// Bus way types
 		if dbData.NodedLines[i].FBuslanes == "1" {
 			arrTags = append(arrTags, 
 				cfg.Tag{
@@ -308,7 +265,7 @@ func main() {
 				})
 		}
 
-		// size restrictions
+		// Size restrictions
 		rWeight, err := strconv.Atoi(dbData.NodedLines[i].RWeight)
 			if err != nil {
 				log.Println(err)
@@ -333,7 +290,7 @@ func main() {
 				})
 		}
 
-		// filling tags array
+		// Filling tags array
 		arrTags = append(arrTags, 
 			cfg.Tag{
 				Key:	"highway",
@@ -368,7 +325,7 @@ func main() {
 				Value:	dbData.NodedLines[i].Tollway,
 			}	)
 		
-		// filling members array => relations
+		// Filling members array => relations
 		if dbData.NodedLines[i].Edge2id > 0 {
 			if dbData.NodedLines[i].Edge5id != 0 {
 				arrMember = append(arrMember, 
@@ -474,7 +431,7 @@ func main() {
 					}	)
 			} */
 
-			// relations
+			// Relations
 			relId.ID = generate()
 			relId.Ts = "2019-01-01T00:00:00Z"
 			relId.Version = 1
@@ -485,7 +442,7 @@ func main() {
 				})			
 		}
 
-		// filling .xml with ways
+		// Filling .xml with ways
 		wayId.Version = 1
 		var tmpnode1 cfg.NdId
 		var tmpnode2 cfg.NdId
@@ -499,10 +456,9 @@ func main() {
 			}	)
 	}
 
+	// Creating output xml file
 	xmlData.Version = "0.6"
 	xmlData.Ts = "2019-01-28T01:59:52Z"
-
-	// creating output xml file
 	f, err := os.Create("out.xml")
 	if err != nil { panic(err) }
 	defer f.Close()
@@ -517,8 +473,8 @@ func main() {
 
 
 // Get geo data from DB
-func getSomeData(db *pg.DB) DbGeom {
-	var ret DbGeom
+func getSomeData(db *pg.DB) cfg.ShapeData {
+	var ret cfg.ShapeData
 	var err error
 	sqlString1 := `select id, st_asgeojson(the_geom) as geom from graph.tline_2_noded_vertices_pgr`
 	sqlString2 := `SELECT bicyclanes, t_buslanes, f_buslanes, "tline_old".r_weight as r_weight, "tline_old".r_height as r_height, "tline_old".r_width as r_width, 
@@ -537,13 +493,12 @@ func getSomeData(db *pg.DB) DbGeom {
 	if err != nil {
 		log.Println("some shit happend:", "\n", err)		
 	}
-	log.Println("query:","\n",ret.Edges[0], ret.NodedLines[0])	
+	log.Println("query answer first row:","\n",ret.Edges[0], ret.NodedLines[0])	
 	return ret
 }
 
 func ReadXml(filename string) []byte {
 	// Some stuff to open & read .xml file
-	// Open our .xml file
 	xmlFile, err := os.Open(filename)
 	if err != nil {
 		log.Println(err)
@@ -551,7 +506,7 @@ func ReadXml(filename string) []byte {
 	log.Println("Successfully opened", filename)
 	defer xmlFile.Close()
 
-	// read our .xml file as a byte array.	
+	// Read our .xml file as a byte array.
 	byteValue, _ := ioutil.ReadAll(xmlFile)
 	return byteValue
 }
