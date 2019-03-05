@@ -95,7 +95,7 @@ type Relation struct {
 // SHAPED FORMAT STRUCTS
 // Shaped body struct
 type ShapeData struct {
-	Edges	[]Edge
+	Edges	[]Node
 	NodedLines	[]NodedLine
 }
 
