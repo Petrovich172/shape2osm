@@ -1,11 +1,5 @@
 package ShapedStructs
 
-import (
-	// "encoding/xml"
-	// "../utils"
-	// "time"
-)
-
 // Way basic information
 type NodedLine struct {
 	Id			int32	`xml:"id"`

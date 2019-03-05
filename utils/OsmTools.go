@@ -14,9 +14,9 @@ import (
 
 )
 
-// Get geo data from DB
+// Get shaped geo data from DB
 func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
-	var ret ShapedStructs.ShapeData
+	ret := ShapedStructs.ShapeData{}
 	var err error
 	sqlString1 := `select id, st_asgeojson(the_geom) as geom from graph.tline_2_noded_vertices_pgr`
 	sqlString2 := `SELECT bicyclanes, t_buslanes, f_buslanes, "tline_old".r_weight as r_weight, "tline_old".r_height as r_height, "tline_old".r_width as r_width, 
@@ -29,18 +29,26 @@ func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
 									`
 	_, err = db.Model().Query(&ret.Edges, sqlString1)
 	if err != nil {
-		log.Println("some shit happend:", "\n", err)		
+		log.Println("Problems with DB:", "\n", err)
+		log.Panicln(err)
 	}
 	_, err = db.Model().Query(&ret.NodedLines, sqlString2)
 	if err != nil {
-		log.Println("some shit happend:", "\n", err)		
+		log.Println("Problems with DB:", "\n", err)
+		log.Panicln(err)
 	}
 	log.Println("query answer first row:","\n",ret.Edges[0], ret.NodedLines[0])	
 	return ret
 }
 
-// Convert Shaped data to Osm
-func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
+// Convert Shaped data to Osm format
+func Convert (shaped ShapedStructs.ShapeData) OsmStructs.Osm {
+
+	// Checking if given data is empty
+	if shaped.Edges == nil || shaped.NodedLines == nil {
+		log.Println("utils.Convert: Shaped data is empty")
+		log.Panicln()
+	}
 	
 	// Initiating xmlData — body struct for .xml 
 	var xmlData OsmStructs.Osm
@@ -63,21 +71,21 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 
 
 	// Iterating every node
-	for i := 0; i < len(dbData.Edges); i++ {
-			nodeId.ID = dbData.Edges[i].Id
+	for i := 0; i < len(shaped.Edges); i++ {
+			nodeId.ID = shaped.Edges[i].Id
 			nodeId.Ts = "2019-01-01T00:00:00Z"
 			nodeId.Version = 1
 			xmlData.Nodes = append(xmlData.Nodes, OsmStructs.Node{
 				Elem:	nodeId,
-				Lat:	dbData.Edges[i].Geom.Coordinates[1],
-				Lng:	dbData.Edges[i].Geom.Coordinates[0],
+				Lat:	shaped.Edges[i].Geom.Coordinates[1],
+				Lng:	shaped.Edges[i].Geom.Coordinates[0],
 				// Tags:	arrTags,
 				}	)
 	}
 	
 	// Iterating every noded line (way)
-	for i := 0; i < len(dbData.NodedLines); i++ {
-		wayId.ID = dbData.NodedLines[i].Id
+	for i := 0; i < len(shaped.NodedLines); i++ {
+		wayId.ID = shaped.NodedLines[i].Id
 		wayId.Ts = "2019-01-01T00:00:00Z"
 		wayId.Version = 1
 		nodeIDs = nil
@@ -85,89 +93,89 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 		arrMember = nil
 
 		// Surface types
-		switch dbData.NodedLines[i].Surface {
+		switch shaped.NodedLines[i].Surface {
 		case "0":
-			dbData.NodedLines[i].Surface = "no data"
+			shaped.NodedLines[i].Surface = "no data"
 		case "1":
-			dbData.NodedLines[i].Surface = "unpaved"
+			shaped.NodedLines[i].Surface = "unpaved"
 		case "2":
-			dbData.NodedLines[i].Surface = "asphalt"
+			shaped.NodedLines[i].Surface = "asphalt"
 		case "3":
-			dbData.NodedLines[i].Surface = "rails"
+			shaped.NodedLines[i].Surface = "rails"
 		}
 
 		// Road types
-		switch dbData.NodedLines[i].SnipAd {
+		switch shaped.NodedLines[i].SnipAd {
 		case "0":
-			dbData.NodedLines[i].SnipAd = "road"
+			shaped.NodedLines[i].SnipAd = "road"
 		case "1":
-			dbData.NodedLines[i].SnipAd = "motorway"
+			shaped.NodedLines[i].SnipAd = "motorway"
 		case "2":
-			dbData.NodedLines[i].SnipAd = "trunk"
+			shaped.NodedLines[i].SnipAd = "trunk"
 		case "3":
-			dbData.NodedLines[i].SnipAd = "primary"
+			shaped.NodedLines[i].SnipAd = "primary"
 		case "4":
-			dbData.NodedLines[i].SnipAd = "secondary"
+			shaped.NodedLines[i].SnipAd = "secondary"
 		case "5":
-			dbData.NodedLines[i].SnipAd = "tertiary"
+			shaped.NodedLines[i].SnipAd = "tertiary"
 		case "6":
-			dbData.NodedLines[i].SnipAd = "unclassified"
+			shaped.NodedLines[i].SnipAd = "unclassified"
 		}
 
 		// TYP_COD types
-		switch dbData.NodedLines[i].TlineTyp {
+		switch shaped.NodedLines[i].TlineTyp {
 		case "7701":
-			dbData.NodedLines[i].SnipAd = "footway"
+			shaped.NodedLines[i].SnipAd = "footway"
 		case "7702":
-			dbData.NodedLines[i].SnipAd = "residential"
+			shaped.NodedLines[i].SnipAd = "residential"
 		case "7703":
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"parking:lane",
 				Value:	"marked",
 			})
-			dbData.NodedLines[i].SnipAd = "road"
+			shaped.NodedLines[i].SnipAd = "road"
 		case "7704":
-			dbData.NodedLines[i].SnipAd = "corridor"
+			shaped.NodedLines[i].SnipAd = "corridor"
 		case "7705":
-			dbData.NodedLines[i].SnipAd = "*"
+			shaped.NodedLines[i].SnipAd = "*"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"winter_road",
 				Value:	"yes",
 			})
 		case "7706":
-			dbData.NodedLines[i].SnipAd = "cycleway"
+			shaped.NodedLines[i].SnipAd = "cycleway"
 		case "7007":
-			dbData.NodedLines[i].SnipAd = "*"
+			shaped.NodedLines[i].SnipAd = "*"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"aerialway",
 				Value:	"cable_car",
 			})
 		case "7730":
-			dbData.NodedLines[i].SnipAd = "*"
+			shaped.NodedLines[i].SnipAd = "*"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"railway",
 				Value:	"rail",
 			})
 		case "7740":
-			dbData.NodedLines[i].SnipAd = "*"
+			shaped.NodedLines[i].SnipAd = "*"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"railway",
 				Value:	"tram",
 			})
 		case "7750":
-			dbData.NodedLines[i].SnipAd = "*"
+			shaped.NodedLines[i].SnipAd = "*"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"railway",
 				Value:	"subway",
 			})
 		case "7760":
-			dbData.NodedLines[i].SnipAd = "*"
+			shaped.NodedLines[i].SnipAd = "*"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"railway",
@@ -176,7 +184,7 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 		}
 
 		// Construction types
-		switch dbData.NodedLines[i].Btf {
+		switch shaped.NodedLines[i].Btf {
 		case "1":
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
@@ -208,37 +216,37 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 				Value:	"level_crossing",
 			})
 		case "6":
-			dbData.NodedLines[i].SnipAd = "footway"
+			shaped.NodedLines[i].SnipAd = "footway"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"bridge",
 				Value:	"yes",
 			})
 		case "7":
-			dbData.NodedLines[i].SnipAd = "footway"
+			shaped.NodedLines[i].SnipAd = "footway"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"footway",
 				Value:	"crossing",
 			})
 		case "8":
-			dbData.NodedLines[i].SnipAd = "footway"
+			shaped.NodedLines[i].SnipAd = "footway"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"tunnel",
 				Value:	"yes",
 			})
 		case "9":
-			dbData.NodedLines[i].SnipAd = "steps"
+			shaped.NodedLines[i].SnipAd = "steps"
 		case "10":
-			dbData.NodedLines[i].SnipAd = "steps"
+			shaped.NodedLines[i].SnipAd = "steps"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"conveying",
 				Value:	"yes",
 			})
 		case "11":
-			dbData.NodedLines[i].SnipAd = "footway"
+			shaped.NodedLines[i].SnipAd = "footway"
 			arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"conveying",
@@ -247,7 +255,7 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 		}
 
 		// Bicycle road types
-		switch dbData.NodedLines[i].Bicyclanes {
+		switch shaped.NodedLines[i].Bicyclanes {
 		case "1":
 			arrTags = append(arrTags, 
 				OsmStructs.Tag{
@@ -261,17 +269,17 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 					Value:	"opposite_lane",
 				})
 		case "3":
-			dbData.NodedLines[i].SnipAd = "cycleway"
+			shaped.NodedLines[i].SnipAd = "cycleway"
 		}
 
 		// Bus way types
-		if dbData.NodedLines[i].FBuslanes == "1" {
+		if shaped.NodedLines[i].FBuslanes == "1" {
 			arrTags = append(arrTags, 
 				OsmStructs.Tag{
 					Key:	"busway:right",
 					Value:	"lane",
 				})
-		} else if dbData.NodedLines[i].TBuslanes == "1" {
+		} else if shaped.NodedLines[i].TBuslanes == "1" {
 			arrTags = append(arrTags, 
 				OsmStructs.Tag{
 					Key:	"busway:left",
@@ -280,7 +288,7 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 		}
 
 		// Size restrictions
-		rWeight, err := strconv.Atoi(dbData.NodedLines[i].RWeight)
+		rWeight, err := strconv.Atoi(shaped.NodedLines[i].RWeight)
 			if err != nil {
 				log.Println(err)
 			}
@@ -288,19 +296,19 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 			arrTags = append(arrTags,
 				OsmStructs.Tag{
 					Key:	"maxweight",
-					Value:	dbData.NodedLines[i].RWeight,
+					Value:	shaped.NodedLines[i].RWeight,
 					})
-		} else if dbData.NodedLines[i].RHeight != "0" {
+		} else if shaped.NodedLines[i].RHeight != "0" {
 			arrTags = append(arrTags,
 				OsmStructs.Tag{
 					Key:	"maxheight",
-					Value:	dbData.NodedLines[i].RHeight,
+					Value:	shaped.NodedLines[i].RHeight,
 					})
-		} else if dbData.NodedLines[i].RWidth != "0" {
+		} else if shaped.NodedLines[i].RWidth != "0" {
 			arrTags = append(arrTags,
 				OsmStructs.Tag{
 					Key:	"maxwidth",
-					Value:	dbData.NodedLines[i].RWidth,
+					Value:	shaped.NodedLines[i].RWidth,
 				})
 		}
 
@@ -308,122 +316,122 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 		arrTags = append(arrTags, 
 			OsmStructs.Tag{
 				Key:	"highway",
-				Value:	dbData.NodedLines[i].SnipAd,
+				Value:	shaped.NodedLines[i].SnipAd,
 			}, 
 			OsmStructs.Tag{
 				Key:	"oneway",
-				Value:	dbData.NodedLines[i].Oneway,
+				Value:	shaped.NodedLines[i].Oneway,
 			},
 			OsmStructs.Tag{
 				Key:	"surface",
-				Value:	dbData.NodedLines[i].Surface,
+				Value:	shaped.NodedLines[i].Surface,
 			},
 			OsmStructs.Tag{
 				Key:	"lanes:forward",
-				Value:	dbData.NodedLines[i].F_lanes,
+				Value:	shaped.NodedLines[i].F_lanes,
 			},
 			OsmStructs.Tag{
 				Key:	"lanes:backward",
-				Value:	dbData.NodedLines[i].T_lanes,
+				Value:	shaped.NodedLines[i].T_lanes,
 			},
 			OsmStructs.Tag{
 				Key:	"maxspeed",
-				Value:	dbData.NodedLines[i].Speedlim,
+				Value:	shaped.NodedLines[i].Speedlim,
 			},
 			OsmStructs.Tag{
 				Key:	"name",
-				Value:	dbData.NodedLines[i].RdName,
+				Value:	shaped.NodedLines[i].RdName,
 			},
 			OsmStructs.Tag{
 				Key:	"toll",
-				Value:	dbData.NodedLines[i].Tollway,
+				Value:	shaped.NodedLines[i].Tollway,
 			}	)
 		
 		// Filling members array => relations
-		if dbData.NodedLines[i].Edge2id > 0 {
-			if dbData.NodedLines[i].Edge5id != 0 {
+		if shaped.NodedLines[i].Edge2id > 0 {
+			if shaped.NodedLines[i].Edge5id != 0 {
 				arrMember = append(arrMember, 
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Id,
+						Ref:	shaped.NodedLines[i].Id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge2id,
+						Ref:	shaped.NodedLines[i].Edge2id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge3id,
+						Ref:	shaped.NodedLines[i].Edge3id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge4id,
+						Ref:	shaped.NodedLines[i].Edge4id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge5id,
+						Ref:	shaped.NodedLines[i].Edge5id,
 						Role:	"",
 					}	)
-			} else if dbData.NodedLines[i].Edge5id == 0 && dbData.NodedLines[i].Edge4id != 0 {
+			} else if shaped.NodedLines[i].Edge5id == 0 && shaped.NodedLines[i].Edge4id != 0 {
 				arrMember = append(arrMember, 
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Id,
+						Ref:	shaped.NodedLines[i].Id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge2id,
+						Ref:	shaped.NodedLines[i].Edge2id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge3id,
+						Ref:	shaped.NodedLines[i].Edge3id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge4id,
+						Ref:	shaped.NodedLines[i].Edge4id,
 						Role:	"",
 					}	)
-			} else if dbData.NodedLines[i].Edge5id == 0 && dbData.NodedLines[i].Edge4id == 0 && dbData.NodedLines[i].Edge3id != 0 {
+			} else if shaped.NodedLines[i].Edge5id == 0 && shaped.NodedLines[i].Edge4id == 0 && shaped.NodedLines[i].Edge3id != 0 {
 				arrMember = append(arrMember, 
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Id,
+						Ref:	shaped.NodedLines[i].Id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge2id,
+						Ref:	shaped.NodedLines[i].Edge2id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge3id,
+						Ref:	shaped.NodedLines[i].Edge3id,
 						Role:	"",
 					}	)
 			} else {
 				arrMember = append(arrMember, 
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Id,
+						Ref:	shaped.NodedLines[i].Id,
 						Role:	"",
 					},
 					OsmStructs.Member{
 						Type:	"way",
-						Ref:	dbData.NodedLines[i].Edge2id,
+						Ref:	shaped.NodedLines[i].Edge2id,
 						Role:	"",
 					}	)
 			}
 
 			/*// restriction tags
 			restrictionsArr = nil
-			if dbData.NodedLines[i].GmanTyp == "7980" {
+			if shaped.NodedLines[i].GmanTyp == "7980" {
 				restrictionsArr = append(restrictionsArr, 
 					OsmStructs.Tag{
 						Key:	"type",
@@ -433,7 +441,7 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 						Key:	"restriction",
 						Value:	"no_entry",
 					}	)
-			} else if dbData.NodedLines[i].GmanTyp == "7990" {
+			} else if shaped.NodedLines[i].GmanTyp == "7990" {
 				restrictionsArr = append(restrictionsArr, 
 					OsmStructs.Tag{
 						Key:	"type",
@@ -460,8 +468,8 @@ func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 		wayId.Version = 1
 		var tmpnode1 OsmStructs.NdId
 		var tmpnode2 OsmStructs.NdId
-		tmpnode1.ID = dbData.NodedLines[i].Source
-		tmpnode2.ID = dbData.NodedLines[i].Target
+		tmpnode1.ID = shaped.NodedLines[i].Source
+		tmpnode2.ID = shaped.NodedLines[i].Target
 		nodeIDs = append(nodeIDs, tmpnode1, tmpnode2)
 		xmlData.Ways = append(xmlData.Ways, OsmStructs.Way{
 			Elem:	wayId,
@@ -484,7 +492,8 @@ func Xml2file (xmlData OsmStructs.Osm) {
 	f.Write([]byte("<?xml version=\"1\" encoding=\"UTF-8\"?>\n"))
 	enc.Indent("", "    ")
     	if err := enc.Encode(&xmlData); err != nil {
-				log.Printf("error: %v\n", err, "%v\n", enc)
+				log.Printf("File writing error: %v\n", err, "%v\n", enc)
+				log.Panicln(err)
 		}
 }
 

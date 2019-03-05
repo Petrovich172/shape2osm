@@ -2,8 +2,6 @@ package OsmStructs
 
 import (
 	"encoding/xml"
-	// "../utils"
-	// "time"
 )
 
 // Osm body struct

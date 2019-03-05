@@ -1,11 +1,5 @@
 package OsmStructs
 
-import (
-	// "encoding/xml"
-	// "../utils"
-	// "time"
-)
-
 // Elem is a Osm base element
 type Elem struct {
 	ID        int32 `xml:"id,attr"`

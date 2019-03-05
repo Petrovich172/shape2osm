@@ -6,7 +6,6 @@ import (
 	"shape2osm/Utils"
 )
 
-
 func main() {
 	log.Println("Heey!")
 
@@ -18,14 +17,12 @@ func main() {
 		})
 	defer db.Close()
 
-	// Querying shaped geo from DB
+	// Querying shaped geo data from DB
 	dbData := utils.GetSomeData(db)
 
-	// Convert Shaped data to Osm
+	// Converting Shaped data to Osm format
 	osmData := utils.Convert(dbData)
 
 	// Creating output xml file
 	utils.Xml2file(osmData)
 }
-
-
