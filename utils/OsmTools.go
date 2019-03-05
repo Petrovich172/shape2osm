@@ -1,14 +1,21 @@
 package utils
 
 import (
-
+	"strconv"
 	"log"
+	"github.com/go-pg/pg"
+	"math/rand"
+	"io/ioutil"
+	"io"
+	"os"
+	"encoding/xml"
 	"shape2osm/OsmStructs"
 	"shape2osm/ShapedStructs"
+
 )
 
 // Get geo data from DB
-func getSomeData(db *pg.DB) ShapedStructs.ShapeData {
+func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
 	var ret ShapedStructs.ShapeData
 	var err error
 	sqlString1 := `select id, st_asgeojson(the_geom) as geom from graph.tline_2_noded_vertices_pgr`
@@ -33,7 +40,7 @@ func getSomeData(db *pg.DB) ShapedStructs.ShapeData {
 }
 
 // Convert Shaped data to Osm
-func convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
+func Convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 	
 	// Initiating xmlData — body struct for .xml 
 	var xmlData OsmStructs.Osm
@@ -466,7 +473,7 @@ func convert (dbData ShapedStructs.ShapeData) OsmStructs.Osm {
 }
 
 // Creating output xml file
-func xml2file (xmlData OsmStructs.Osm) {	
+func Xml2file (xmlData OsmStructs.Osm) {	
 	xmlData.Version = "0.6"
 	xmlData.Ts = "2019-01-28T01:59:52Z"
 	f, err := os.Create("out.xml")
