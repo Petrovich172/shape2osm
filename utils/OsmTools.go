@@ -58,11 +58,17 @@ func InsertOsm2DB(xmlData OsmStructs.Osm, db *pg.DB) {
    	// Inserting nodes
    	err = db.Insert(&xmlData.Nodes)
    	if err != nil {
-   		log.Println("can't insert nodes", err)
+   		log.Panicln("can't insert nodes", err)
    	} else {
    		log.Println("Nodes successfully inserted")
    	}
 
+   	type Way struct {
+		Id 		int32	`sql:"id"`		
+		Nds		[]int32 `sql:"nodes, type:integer[]"`
+		Tags    []OsmStructs.Tag `sql:"tags"`
+
+	}    
     err = db.CreateTable(&OsmStructs.Way{}, &orm.CreateTableOptions{
         // Temp:          true, // create temp table    	
    	})
@@ -80,12 +86,6 @@ func InsertOsm2DB(xmlData OsmStructs.Osm, db *pg.DB) {
 		return
 	}
    	
-   	type Way struct {
-		Id 		int32	`sql:"id"`		
-		Nds		[]int32 `sql:"nodes, type:integer[]"`
-		Tags    []OsmStructs.Tag `sql:"tags"`
-
-	}
 	// Inserting ways
    	for _, way := range xmlData.Ways {
    		err = db.Insert(&Way{
@@ -95,11 +95,8 @@ func InsertOsm2DB(xmlData OsmStructs.Osm, db *pg.DB) {
    			Tags:	way.Tags,
    		})
    	   	if err != nil {
-   		log.Println("can't insert ways", err)
+   		log.Panicln("can't insert ways", err, way.Elem.ID)
    		}
-   	}
-   	if err = nil {
-   		log.Println("Ways successfully inserted")
    	}
 }
 
@@ -539,7 +536,23 @@ func Convert (shaped ShapedStructs.ShapeData) OsmStructs.Osm {
 			Tags:	arrTags,
 			}	)
 	}
+	xmlData.Ways = UniqWays(xmlData.Ways)
 	return xmlData
+}
+
+// Cleaning id dublicates
+func UniqWays(s []OsmStructs.Way) []OsmStructs.Way {
+	seen := make(map[OsmStructs.Elem]struct{}, len(s))
+	j := 0
+	for _, v := range s {
+		if _, ok := seen[v.Elem]; ok {
+			continue
+		}
+		seen[v.Elem] = struct{}{}
+		s[j] = v
+		j++
+	}
+	return s[:j]
 }
 
 // Creating output xml file

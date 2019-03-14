@@ -7254,45 +7254,9 @@
         <tag k="name" v="Комсомольская пл."></tag>
         <tag k="toll" v="0"></tag>
     </way>
-    <way id="142" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="55"></nd>
-        <nd ref="128"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
     <way id="144" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="128"></nd>
         <nd ref="129"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="144" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="128"></nd>
-        <nd ref="129"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="145" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="129"></nd>
-        <nd ref="130"></nd>
         <tag k="highway" v="tertiary"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -7326,45 +7290,9 @@
         <tag k="name" v="Комсомольская пл."></tag>
         <tag k="toll" v="0"></tag>
     </way>
-    <way id="146" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="130"></nd>
-        <nd ref="131"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
     <way id="147" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="131"></nd>
         <nd ref="132"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="147" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="131"></nd>
-        <nd ref="132"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="148" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="132"></nd>
-        <nd ref="133"></nd>
         <tag k="highway" v="tertiary"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -7398,45 +7326,9 @@
         <tag k="name" v="Комсомольская пл."></tag>
         <tag k="toll" v="0"></tag>
     </way>
-    <way id="149" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="133"></nd>
-        <nd ref="134"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
     <way id="150" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="134"></nd>
         <nd ref="135"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="150" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="134"></nd>
-        <nd ref="135"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="151" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="135"></nd>
-        <nd ref="136"></nd>
         <tag k="highway" v="tertiary"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -7470,45 +7362,9 @@
         <tag k="name" v="Комсомольская пл."></tag>
         <tag k="toll" v="0"></tag>
     </way>
-    <way id="152" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="136"></nd>
-        <nd ref="137"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
     <way id="153" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="137"></nd>
         <nd ref="138"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="153" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="137"></nd>
-        <nd ref="138"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="154" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="138"></nd>
-        <nd ref="139"></nd>
         <tag k="highway" v="tertiary"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -7542,45 +7398,9 @@
         <tag k="name" v="Комсомольская пл."></tag>
         <tag k="toll" v="0"></tag>
     </way>
-    <way id="156" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="139"></nd>
-        <nd ref="140"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
     <way id="158" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="140"></nd>
         <nd ref="141"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="158" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="140"></nd>
-        <nd ref="141"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="159" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="141"></nd>
-        <nd ref="142"></nd>
         <tag k="highway" v="tertiary"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -7614,45 +7434,9 @@
         <tag k="name" v="Комсомольская пл."></tag>
         <tag k="toll" v="0"></tag>
     </way>
-    <way id="160" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="142"></nd>
-        <nd ref="143"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
     <way id="161" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="143"></nd>
         <nd ref="144"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="161" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="143"></nd>
-        <nd ref="144"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="162" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="144"></nd>
-        <nd ref="145"></nd>
         <tag k="highway" v="tertiary"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="asphalt"></tag>
@@ -7686,45 +7470,9 @@
         <tag k="name" v="Комсомольская пл."></tag>
         <tag k="toll" v="0"></tag>
     </way>
-    <way id="163" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="145"></nd>
-        <nd ref="146"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
     <way id="164" version="1" timestamp="2019-01-01T00:00:00Z">
         <nd ref="146"></nd>
         <nd ref="147"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="164" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="146"></nd>
-        <nd ref="147"></nd>
-        <tag k="highway" v="tertiary"></tag>
-        <tag k="oneway" v="1"></tag>
-        <tag k="surface" v="asphalt"></tag>
-        <tag k="lanes:forward" v="2"></tag>
-        <tag k="lanes:backward" v="0"></tag>
-        <tag k="maxspeed" v="60"></tag>
-        <tag k="name" v="Комсомольская пл."></tag>
-        <tag k="toll" v="0"></tag>
-    </way>
-    <way id="165" version="1" timestamp="2019-01-01T00:00:00Z">
-        <nd ref="147"></nd>
-        <nd ref="88"></nd>
         <tag k="highway" v="tertiary"></tag>
         <tag k="oneway" v="1"></tag>
         <tag k="surface" v="asphalt"></tag>
