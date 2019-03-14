@@ -2,7 +2,7 @@ package OsmStructs
 
 // Elem is a Osm base element
 type Elem struct {
-	ID        int32 `xml:"id,attr"`
+	ID        int32 `xml:"id,attr" sql:"id"`
 	// Loc       Location
 	Version   int       `xml:"version,attr"`
 	// Ts        time.Time `xml:"timestamp,attr"`

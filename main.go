@@ -3,11 +3,16 @@ package main
 import (
 	"log"
 	"github.com/go-pg/pg"
-	"shape2osm/Utils"
+	"shape2osm/utils"
+	// "os"
 )
 
 func main() {
 	log.Println("Heey!")
+
+	// utils.ReadBytes()
+
+	// os.Exit(1)
 
 	db := pg.Connect(&pg.Options{
 			Addr:      "172.20.12.159" + ":" + "5432",
@@ -25,4 +30,7 @@ func main() {
 
 	// Creating output xml file
 	utils.Xml2file(osmData)
+
+	// Creating temp table and inserting OSM data to DB
+	utils.InsertOsm2DB(osmData, db)
 }

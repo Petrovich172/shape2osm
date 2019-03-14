@@ -8,7 +8,7 @@ import (
 type Node struct {
 	Elem
 	XMLName xml.Name `xml:"node"`
-	Lat     float64  `xml:"lat,attr"`
-	Lng     float64  `xml:"lon,attr"`
-	Tags     []Tag    `xml:"tag"`
+	Lat     float64  `xml:"lat,attr" sql:"lat"`
+	Lng     float64  `xml:"lon,attr" sql:"lon"`
+	Tags     []Tag    `xml:"tag" sql:"tags"`
 }

@@ -2,8 +2,10 @@ package utils
 
 import (
 	"strconv"
+	// "fmt"
 	"log"
 	"github.com/go-pg/pg"
+	"github.com/go-pg/pg/orm"
 	"math/rand"
 	"io/ioutil"
 	"io"
@@ -13,6 +15,7 @@ import (
 	"shape2osm/ShapedStructs"
 
 )
+
 
 // Get shaped geo data from DB
 func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
@@ -39,6 +42,65 @@ func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
 	}
 	log.Println("query answer first row:","\n",ret.Edges[0], ret.NodedLines[0])	
 	return ret
+}
+
+
+func InsertOsm2DB(xmlData OsmStructs.Osm, db *pg.DB) {
+	var err error
+    err = db.CreateTable(&OsmStructs.Node{}, &orm.CreateTableOptions{
+        // Temp:          true, // create temp table
+   	})
+   	if err != nil {
+   		log.Println("can't create nodes table:", err)
+   	} else {
+   		log.Println("Successfully created Nodes table")
+   	}
+   	// Inserting nodes
+   	err = db.Insert(&xmlData.Nodes)
+   	if err != nil {
+   		log.Println("can't insert nodes", err)
+   	} else {
+   		log.Println("Nodes successfully inserted")
+   	}
+
+    err = db.CreateTable(&OsmStructs.Way{}, &orm.CreateTableOptions{
+        // Temp:          true, // create temp table    	
+   	})
+    if err != nil {
+   		log.Println("can't create ways table:", err)
+   	} else {
+   		log.Println("Successfully created Ways table")
+   	}
+
+   	// Iterating []NdId{} to get only values
+	NodesOut := func (nds []OsmStructs.NdId) (nodes []int32) {
+		for _, id := range nds {
+			nodes = append(nodes, id.ID)
+		}
+		return
+	}
+   	
+   	type Way struct {
+		Id 		int32	`sql:"id"`		
+		Nds		[]int32 `sql:"nodes, type:integer[]"`
+		Tags    []OsmStructs.Tag `sql:"tags"`
+
+	}
+	// Inserting ways
+   	for _, way := range xmlData.Ways {
+   		err = db.Insert(&Way{
+   			Id:		way.Elem.ID,
+   			Nds:	NodesOut(way.Nds),
+   			// Nds:	way.Nds,
+   			Tags:	way.Tags,
+   		})
+   	   	if err != nil {
+   		log.Println("can't insert ways", err)
+   		}
+   	}
+   	if err = nil {
+   		log.Println("Ways successfully inserted")
+   	}
 }
 
 // Convert Shaped data to Osm format
