@@ -31,9 +31,9 @@ func main() {
 	// Creating output xml file
 	utils.Xml2file(osmData)
 
-	/*// Inserting OSM data to DB
-	utils.InsertOsm2DB(osmData, db)
-	*/
+	// Inserting OSM data to DB
+	// utils.InsertOsm2DB(osmData, db)
+	
 
 	// Contracting using temp table and pgr_contractGraph tool
 	contracted := utils.OsmContract(osmData, db)

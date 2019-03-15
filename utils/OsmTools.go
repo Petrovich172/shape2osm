@@ -68,7 +68,7 @@ func InsertOsm2DB(xmlData OsmStructs.Osm, db *pg.DB) {
 		Nds		[]int32 `sql:"nodes, type:integer[]"`
 		Tags    []OsmStructs.Tag `sql:"tags"`
 
-	}    
+	}
     err = db.CreateTable(&OsmStructs.Way{}, &orm.CreateTableOptions{
         // Temp:          true, // create temp table    	
    	})
@@ -88,16 +88,19 @@ func InsertOsm2DB(xmlData OsmStructs.Osm, db *pg.DB) {
    	
 	// Inserting ways
    	for _, way := range xmlData.Ways {
-   		err = db.Insert(&Way{
-   			Id:		way.Elem.ID,
-   			Nds:	NodesOut(way.Nds),
-   			// Nds:	way.Nds,
-   			Tags:	way.Tags,
-   		})
-   	   	if err != nil {
-   		log.Panicln("can't insert ways", err, way.Elem.ID)
-   		}
-   	}
+		err = db.Insert(&Way{
+			Id:		way.Elem.ID,
+			Nds:	NodesOut(way.Nds),
+			// Nds:	way.Nds,
+			Tags:	way.Tags,
+		})
+		if err != nil {
+			log.Panicln("can't insert ways", err, way.Elem.ID)
+		}
+	}
+	// var wway []Way
+	// _, err = db.Query(wway, `select * FROM public.ways as ways limit 1`)
+	// log.Println("Select ways:",err)
 }
 
 // Convert Shaped data to Osm format

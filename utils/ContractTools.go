@@ -56,6 +56,7 @@ func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
    		log.Println("Successfully created Nodes table")
    	}
    	// Inserting nodes
+   	// err = db.TableExpr("pg_temp.nodes AS ways").Insert(&xmlData.Nodes)
    	err = db.Insert(&xmlData.Nodes)
    	if err != nil {
    		log.Println("can't insert nodes", err)
@@ -79,8 +80,8 @@ func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
 		}
 		return
 	}
-   	
-   	type Way struct {
+
+	type Way struct {
 		Id 		int32	`sql:"id"`		
 		Nds		[]int32 `sql:"nodes, type:integer[]"`
 		Tags    []OsmStructs.Tag `sql:"tags"`
@@ -97,9 +98,17 @@ func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
    		log.Println("can't insert ways", err)
    		}
    	}
-   	// var wwway [][]string
-   	// _, err = db.Query(&wwway,`select * from pg_temp.ways`)
-   	// log.Println("Select ways:",err)
+  //  	type nd struct {
+  //  		Id 		int32	 `sql:"id"`
+		// Lat     float64  `xml:"lat,attr" sql:"lat"`
+		// Lng     float64  `xml:"lon,attr" sql:"lon"`
+  //  	}
+
+  //  	var ndd *nd = &nd{}
+   	// var wwway *Way = &Way{}
+	var wway []Way
+	_, err = db.Query(&wway, `select id, nodes, tags FROM pg_temp.ways as ways limit 1`)
+   	log.Println("Select ways:",err)
 
    	// Contracting with pgr_contractGraph tool
    	var res []Contracted
