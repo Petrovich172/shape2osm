@@ -7,13 +7,22 @@ import (
 	// "os"
 )
 
+type dbLogger struct{}
+
+func (d dbLogger) BeforeQuery(q *pg.QueryEvent) {}
+func (d dbLogger) AfterQuery(q *pg.QueryEvent) {
+  fmt.Println(q.FormattedQuery())
+}
+
+
+
 func main() {
 	log.Println("Heey!")
 
 	// utils.ReadBytes()
 
 	// os.Exit(1)
-
+	
 	db := pg.Connect(&pg.Options{
 			Addr:      "172.20.12.159" + ":" + "5432",
 			User:      "postgres",
@@ -21,6 +30,8 @@ func main() {
 			Database:  "postgres",
 		})
 	defer db.Close()
+
+	db.AddQueryHook(dbLogger{})
 
 	// Querying shaped geo data from DB
 	dbData := utils.GetSomeData(db)

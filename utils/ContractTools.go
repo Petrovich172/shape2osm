@@ -73,6 +73,15 @@ func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
    		log.Println("Successfully created Ways table")
    	}
 
+   	arr := NodesOut(way.Nds)
+    arrStr := make([]string, len(arr))
+    for i := range arr {
+      arrStr[i] = strconv.Itoa(int(arr[i]))
+    }
+    sqlString := fmt.Sprintf("INSERT INTO ways (id, nodes) VALUES(%d, ARRAY[%v]::integer[]);", way.Elem.ID, strings.Join(arrStr, ","))
+    _, err := db.ExecOne(sqlString)
+    
+
    	// Iterating []NdId{} to get only values
 	NodesOut := func (nds []OsmStructs.NdId) (nodes []int32) {
 		for _, id := range nds {
