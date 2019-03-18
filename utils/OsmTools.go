@@ -98,9 +98,21 @@ func InsertOsm2DB(xmlData OsmStructs.Osm, db *pg.DB) {
 			log.Panicln("can't insert ways", err, way.Elem.ID)
 		}
 	}
-	// var wway []Way
-	// _, err = db.Query(wway, `select * FROM public.ways as ways limit 1`)
-	// log.Println("Select ways:",err)
+	/*var res []Contracted
+	sqlString := fmt.Sprintf(`
+		SELECT seq, type, id, contracted_vertices, source, target, cost FROM pgr_contractGraph(
+			'SELECT ways.id, nodes1.id as source, nodes2.id as target, 1 as cost FROM public.ways as ways 
+			join public.nodes as nodes1 on nodes1.id = ways.nodes[1]
+			join public.nodes as nodes2 on nodes2.id = ways.nodes[2]
+			', ARRAY[1, 2]);
+	`)
+	_, err = db.Query(&res, sqlString)
+	if err != nil {
+		log.Panicln("can't contract:", err)
+	} else {
+		log.Println("Contracted!")
+	}
+	return res*/
 }
 
 // Convert Shaped data to Osm format

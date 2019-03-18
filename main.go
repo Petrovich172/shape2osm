@@ -3,18 +3,10 @@ package main
 import (
 	"log"
 	"github.com/go-pg/pg"
+	// "github.com/go-pg/pg/orm"
 	"shape2osm/utils"
 	// "os"
 )
-
-type dbLogger struct{}
-
-func (d dbLogger) BeforeQuery(q *pg.QueryEvent) {}
-func (d dbLogger) AfterQuery(q *pg.QueryEvent) {
-  fmt.Println(q.FormattedQuery())
-}
-
-
 
 func main() {
 	log.Println("Heey!")
@@ -29,9 +21,10 @@ func main() {
 			Password:  "postgres",
 			Database:  "postgres",
 		})
-	defer db.Close()
+	
 
-	db.AddQueryHook(dbLogger{})
+	// db.AddQueryHook(dbLogger{})
+	defer db.Close()
 
 	// Querying shaped geo data from DB
 	dbData := utils.GetSomeData(db)
@@ -43,12 +36,21 @@ func main() {
 	utils.Xml2file(osmData)
 
 	// Inserting OSM data to DB
-	// utils.InsertOsm2DB(osmData, db)
+	// contracted := utils.InsertOsm2DB(osmData, db)
 	
 
 	// Contracting using temp table and pgr_contractGraph tool
 	contracted := utils.OsmContract(osmData, db)
 	
-	// utils.WriteContracted(contracted)
-	log.Println(contracted)
+	utils.WriteContracted(contracted)
+	// log.Println(contracted)
+
+	
 }
+
+// type dbLogger struct{}
+
+// func (d dbLogger) BeforeQuery(q *pg.QueryEvent) {}
+// func (d dbLogger) AfterQuery(q *pg.QueryEvent) {
+//   log.Println(q.FormattedQuery())
+// }
