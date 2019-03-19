@@ -11,10 +11,6 @@ import (
 func main() {
 	log.Println("Heey!")
 
-	// utils.ReadBytes()
-
-	// os.Exit(1)
-	
 	db := pg.Connect(&pg.Options{
 			Addr:      "172.20.12.159" + ":" + "5432",
 			User:      "postgres",
@@ -42,10 +38,13 @@ func main() {
 	// Contracting using temp table and pgr_contractGraph tool
 	contracted := utils.OsmContract(osmData, db)
 	
+	// Writing contracted data to the file contracted.gob
 	utils.WriteContracted(contracted)
 	// log.Println(contracted)
 
-	
+	utils.ReadBytes()
+
+
 }
 
 // type dbLogger struct{}

@@ -35,7 +35,7 @@ func check(e error) {
 }
 
 func ReadBytes() {
-	file := "/home/pete/OSRM/data/out.xml.osrm"
+	file := "./contracted.gob"
 	// dat, err := ioutil.ReadFile(file)
 	// check(err)
 	// log.Print(string(dat))
@@ -51,7 +51,6 @@ func ReadBytes() {
 
 func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
 	var err error
-	// log.Println("contracted:",Contracted{Seq:1,})
 	qs := []string{
 		`create temp table nodes (id int, lat float, lon float);`,
 		`create temp table ways (id int, nodes int[]);`,	
