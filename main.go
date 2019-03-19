@@ -42,7 +42,8 @@ func main() {
 	utils.WriteContracted(contracted)
 	// log.Println(contracted)
 
-	utils.ReadBytes()
+	utils.CsvExport(contracted)
+	// utils.ReadBytes()
 
 
 }

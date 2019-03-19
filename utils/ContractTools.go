@@ -2,13 +2,14 @@ package utils
 
 import (
     // "bufio"
-    // "encoding/csv"
+    "encoding/csv"
     "log"
     // "bytes"
-	"encoding/gob"    
+	"encoding/gob"
     // "io"
     // "io/ioutil"
-   	"shape2osm/OsmStructs"
+	"shape2osm/OsmStructs"
+	"shape2osm/ContractedStructs"
 	// "github.com/go-pg/pg/orm"
 	"github.com/go-pg/pg"
     "os"
@@ -17,39 +18,30 @@ import (
     "strings"
 )
 
-type Contracted struct {
-	tableName struct{} `sql:"table_name"`
-	Seq					int32	`sql:"seq"`
-	Type				string	`sql:"type"`
-	Id					int32	`sql:"id"`
-	ContractedVertices	[]int32	`sql:"contracted_vertices"`
-	Source				int32	`sql:"source"`
-	Target				int32	`sql:"target"`
-	Cost				float32	`sql:"cost"`
-}
-
 func check(e error) {
     if e != nil {
         panic(e)
     }
 }
 
-func ReadBytes() {
-	file := "./contracted.gob"
-	// dat, err := ioutil.ReadFile(file)
-	// check(err)
-	// log.Print(string(dat))
+// func ReadBytes() []byte{
+// 	file := "./contracted.gob"
+// 	// dat, err := ioutil.ReadFile(file)
+// 	// check(err)
+// 	// log.Print(string(dat))
 
-	f, err := os.Open(file)
-	check(err)
+// 	f, err := os.Open(file)
+// 	check(err)
 
-	b1 := make([]byte, 2000)
-	n1, err := f.Read(b1)
-	check(err)
-	log.Printf("%d bytes: %s\n", n1, string(b1))
-}
+// 	b1 := make([]byte, 2000)
+// 	n1, err := f.Read(b1)
+// 	check(err)
+// 	// res := fmt.Printf("%d bytes: %s\n", n1, string(b1))
+// 	res := n1
+// 	return res
+// }
 
-func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
+func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []ContractedStructs.Contracted {
 	var err error
 	qs := []string{
 		`create temp table nodes (id int, lat float, lon float);`,
@@ -97,9 +89,9 @@ func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
    	log.Println("Nodes & ways inserted")
 
 	// Contracting with pgr_contractGraph tool
-	var res []Contracted
+	var res []ContractedStructs.Contracted
 	sqlString := fmt.Sprintf(`
-		SELECT seq, type, id, contracted_vertices, source, target, cost FROM pgr_contractGraph(
+		SELECT seq, type, id, contracted_vertices::integer[], source, target, cost FROM pgr_contractGraph(
 			'SELECT ways.id, nodes1.id as source, nodes2.id as target, 1 as cost FROM pg_temp.ways as ways 
 			join pg_temp.nodes as nodes1 on nodes1.id = ways.nodes[1]
 			join pg_temp.nodes as nodes2 on nodes2.id = ways.nodes[2]
@@ -116,32 +108,32 @@ func OsmContract(xmlData OsmStructs.Osm, db *pg.DB) []Contracted {
 }
 
 
+func CsvExport(contracted []ContractedStructs.Contracted) error {
+	var data [][]byte
+	data = append(data, ([]byte(fmt.Sprintf("seq\ttype\tid\tcontracted_vertices\tsource\ttarget\tcost\n"))))
+	for _, d := range contracted {
+			data = append(data, ([]byte(fmt.Sprintf("%v\t %v\t %v\t %v\t %v\t %v\t %v\t", d.Seq, d.Type, d.Id, d.ContractedVertices, d.Source, d.Target, d.Cost))) )
+		data = append(data, ([]byte(fmt.Sprintf("\n"))) )
+	}
+	file, err := os.Create("result.csv")
+	if err != nil {
+		return err
+	}
+	defer file.Close()
 
+	writer := csv.NewWriter(file)
+	defer writer.Flush()
 
-// func CsvExport(contracted []Contracted) error {
-// 	var data [][]byte
-// 	for _, d := range contracted {
-// 		data = append(data, []byte(d))
-// 	}
-//     file, err := os.Create("result.csv")
-//     if err != nil {
-//         return err
-//     }
-//     defer file.Close()
+	for _, value := range data {
+		if _, err := file.Write([]byte(value)); err != nil {
+			return err // let's return errors if necessary, rather than having a one-size-fits-all error handler
+		}
+	}
+    return err
+}
 
-//     writer := csv.NewWriter(file)
-//     defer writer.Flush()
-
-//     for _, value := range data {
-//         if _, err := file.Write([]byte(value)); err != nil {
-//             return err // let's return errors if necessary, rather than having a one-size-fits-all error handler
-//         }
-//     }
-//     return nil
-// }
-
-func WriteContracted(contracted []Contracted) error {
-	err := writeGob("./contracted.gob",contracted)
+func WriteContracted(contracted []ContractedStructs.Contracted) error {
+	err := writeGob("./contracted.gob", contracted)
 	if err != nil{
 		log.Println(err)
 	}
