@@ -18,7 +18,8 @@
 ```
 
 2. Get shaped geo data from you DB
-```	// Querying shaped geo data from DB
+```	
+	// Querying shaped geo data from DB
 	dbData := utils.GetSomeData(db)
 ```
 
@@ -43,12 +44,14 @@ func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
 ```
 
 3. Tool, converting shaped to osm format
-```	// Converting Shaped data to Osm format
+```	
+	// Converting Shaped data to Osm format
 	osmData := utils.Convert(dbData)
 ```
 
 4. Tools, creating xml file with osm data and inserting data to DB. Comment if you don't need that
-```	// Creating output xml file
+```	
+	// Creating output xml file
 	utils.Xml2file(osmData)
 
 	// Inserting OSM data to DB
@@ -56,7 +59,8 @@ func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
 ```
 
 5. Contracting osm data, using pgr_contractGraph tool. Creates temp tables in your DB
-```	// Contracting using temp table and pgr_contractGraph tool
+```	
+	// Contracting using temp table and pgr_contractGraph tool
 	contracted := utils.OsmContract(osmData, db)
 ```
 
