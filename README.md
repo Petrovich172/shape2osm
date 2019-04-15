@@ -61,13 +61,13 @@ func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
 ```
 
 6. Then you can write your contracted data either in .gob
-```	// Writing contracted data to the file contracted.gob
+```	
+	// Writing contracted data to the file contracted.gob
 	utils.WriteContracted(contracted)
-	// log.Println(contracted)
 ```
 or .csv format
-```	utils.CsvExport(contracted)
-	// utils.ReadBytes()
+```	
+	utils.CsvExport(contracted)	
 ```
 
 Good luck!
