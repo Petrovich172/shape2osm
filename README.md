@@ -1,10 +1,10 @@
 # shape2xml tool
-Basically, converts given shaped-format geo data to osm format.
-Can query shaped data from database.
-Creates .xml file, filled with osm data.
-Can upload recieved osm data to DB
-Contrants osm data, using pgr_contractGraph and DB temp tables
-Writes contracted data to gob or csv format
+- Basically, converts given shaped-format geo data to osm format.
+- Can query shaped data from database.
+- Creates .xml file, filled with osm data.
+- Can upload recieved osm data to DB
+- Contrants osm data, using pgr_contractGraph and DB temp tables
+- Writes contracted data to gob or csv format
 
 ## Using
 1. Set up your DB parameters in main.go
@@ -22,8 +22,9 @@ Writes contracted data to gob or csv format
 ```
 
 Set up your own sql query with correct tables. 
-sqlString1 is for nodes coordinates with ids
-sqlString2 is for edges with source and target node id and all geo information data (e.g. speedlim, surface, oneway etc.)
+* sqlString1 is for nodes coordinates with ids
+* sqlString2 is for edges with source and target node id and all geo information data (e.g. speedlim, surface, oneway etc.)
+
 ```
 // Get shaped geo data from DB
 func GetSomeData(db *pg.DB) ShapedStructs.ShapeData {
