@@ -21,7 +21,7 @@
 	dbData := utils.GetSomeData(db)
 ```
 
-**Set up your own sql query with correct tables.**
+**Set up your own sql query with correct tables at OsmTools.go**
 * sqlString1 is for nodes coordinates with ids
 * sqlString2 is for edges with source and target node id and all geo information data (e.g. speedlim, surface, oneway etc.)
 
