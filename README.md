@@ -6,7 +6,7 @@ Can upload recieved osm data to DB
 Contrants osm data, using pgr_contractGraph and DB temp tables
 Writes contracted data to gob or csv format
 
-** Using **
+## Using
 1. Set up your DB parameters in main.go
 ```	db := pg.Connect(&pg.Options{
 			Addr:      "172.20.12.159" + ":" + "5432",
