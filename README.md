@@ -8,7 +8,8 @@
 
 ## Using
 1. Set up your DB parameters in main.go
-```	db := pg.Connect(&pg.Options{
+```	
+	db := pg.Connect(&pg.Options{
 			Addr:      "172.20.12.159" + ":" + "5432",
 			User:      "postgres",
 			Password:  "postgres",
